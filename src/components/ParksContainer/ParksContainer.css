@@ -1,3 +1,5 @@
 .ParksContainer {
   background-color: tan;
+  display: flex;
+  flex-wrap: wrap;
 }
