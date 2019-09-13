@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
+import { storeParks } from '../../actions';
+import { connect } from 'react-redux';
 import Home from '../Home/Home';
 import ParksContainer from '../../components/ParksContainer/ParksContainer';
 import Park from '../Park/Park';
@@ -8,7 +10,7 @@ import './App.css';
 import { key } from './key.js';
 import TempParkData from '../App/TempData';
 
-export default class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -25,6 +27,8 @@ export default class App extends Component {
     // .then(data => this.setState({parks: data.data}))
     // .then(() => this.setState({isLoading: false}))
     // .catch(error => this.setState({error: error.message}))
+    storeParks(TempParkData)
+    this.props.storeParks
   }
 
   render() {
@@ -68,3 +72,9 @@ export default class App extends Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  storeParks: parks => dispatch(storeParks(parks))
+});
+
+export default connect(null, mapDispatchToProps)(App);
