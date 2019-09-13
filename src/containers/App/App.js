@@ -20,7 +20,7 @@ export default class App extends Component {
 
   componentDidMount() {
     // Comment in fetch and remove temp data, reassign state to array
-    // fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key.api_key}`)
+    // fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key.nps_api_key}`)
     // .then(res => res.json())
     // .then(data => this.setState({parks: data.data}))
     // .then(() => this.setState({isLoading: false}))

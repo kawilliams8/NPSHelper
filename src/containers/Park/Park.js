@@ -8,7 +8,7 @@ const Park = ({ park }) => {
   if (park.latLong) {
   const lat = park.latLong.split(" ")[0].substring(4);
   const long = park.latLong.split(" ")[1].substring(5);
-  mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v9/static/${long},${lat}5,0,0/300x200?access_token=${key.mb_api_key}`
+  mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v9/static/${long},${lat}5,0,0/500x400?access_token=${key.mb_api_key}`
   }
 
   return (
@@ -24,7 +24,7 @@ const Park = ({ park }) => {
       <h3>Directions: {park.directionsInfo}</h3>
       <h3>LatLong: {park.latLong}</h3>
       <h3>Weather: {park.weatherInfo}</h3>
-      <a href={park.url} target="_blank" >Official Site</a>
+      <a href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
       <Link to="/parks" className="button">Go Back</Link>
       </article>
     </section>

@@ -14,9 +14,10 @@
 
 .Park-card-image {
   align-self: flex-start;
-  object-fit: cover;
+  height: 400px;
   margin: 10px;
-  width: 50%;
+  object-fit: cover;
+  width: 500px;
 }
 
 .Park-card-map {
