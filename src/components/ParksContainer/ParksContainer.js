@@ -4,6 +4,7 @@ import './ParksContainer.css';
 
 const ParksContainer = ({ parks }) => {
 
+  console.log('in PC', parks)
   const parkCards = parks.map(park => {
     const { id, parkCode, name, states, type } = park;
     return (

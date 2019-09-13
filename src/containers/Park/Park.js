@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import notFound from '../../images/image-not-found.jpg';
 import { key } from '../App/key';
 import './Park.css';
 
 const Park = ({ park }) => {
+  console.log('inPark', park)
   let mapUrl = "";
   if (park.latLong) {
   const lat = park.latLong.split(" ")[0].substring(4);
@@ -13,7 +15,7 @@ const Park = ({ park }) => {
 
   return (
     <section className="Park-card">
-      <img className="Park-card-image" src={park.images[0].url} alt={park.fullName} />
+      <img className="Park-card-image" src={park.images[0].url || notFound  } alt={park.fullName} />
       {park.latLong && <img className="Park-card-map" src={mapUrl} alt='map' />}
       <article className="Park-card-info">
       <h2>{park.name}</h2>

@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="Home">
-      <h2>Click on a Park</h2>
+      <h2>Home Component Here</h2>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
 import { connect } from 'react-redux';
+import Loading from '../../images/loading.gif';
 import Home from '../Home/Home';
 import ParksContainer from '../../components/ParksContainer/ParksContainer';
 import Park from '../Park/Park';
@@ -25,7 +26,6 @@ export class App extends Component {
     .then(res => res.json())
     .then(data => this.filterParks(data.data))
     .then(() => this.setState({isLoading: false}))
-    .then(() => console.log(this.state.isLoading))
     .catch(error => this.setState({error: error.message}))
   }
 
@@ -45,7 +45,6 @@ export class App extends Component {
   render() {
     return (
       <main className="App">
-        {this.state.isLoading}
         <header className="App-header">
           <NavLink to="/" className="NavText">Home</NavLink>
           <NavLink to="/parks" className="NavText">National Parks</NavLink>
@@ -53,6 +52,7 @@ export class App extends Component {
           <NavLink to="/others" className="NavText">Other Sites</NavLink>
           <NavLink to="/favorites" className="NavText">Favorite Sites</NavLink>
         </header>
+        {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
         <Route exact path='/' component={Home} />
         <Route exact path='/parks' render={ () => <ParksContainer parks={this.props.parks}/>} />
         <Route exact path='/monuments' render={() => <ParksContainer parks={this.props.monuments} />} />
