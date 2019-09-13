@@ -4,3 +4,30 @@
   margin: 20px;
   width: 400px;
 }
+
+.Park-card {
+  border: 2px solid black;
+  display: flex;
+  margin: auto;
+  width: 90%;
+}
+
+.Park-card-image {
+  align-self: flex-start;
+  object-fit: cover;
+  margin: 10px;
+  width: 50%;
+}
+
+.Park-card-map {
+  align-self: flex-start;
+  margin: 10px;
+  width: 50%;
+}
+
+.Park-card-info {
+  align-self: flex-end;
+  margin: 10px;
+  text-align: center;
+  width: 50%;
+}

@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { key } from '../App/key';
 import './Park.css';
 
 const Park = ({ park }) => {
+  let mapUrl = "";
+  if (park.latLong) {
+  const lat = park.latLong.split(" ")[0].substring(4);
+  const long = park.latLong.split(" ")[1].substring(5);
+  mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v9/static/${long},${lat}5,0,0/300x200?access_token=${key.mb_api_key}`
+  }
+
   return (
-    <section className="Park">
-      <Link to="/parks" className="button">Go Back</Link>
+    <section className="Park-card">
+      <img className="Park-card-image" src={park.images[0].url} alt={park.fullName} />
+      {park.latLong && <img className="Park-card-map" src={mapUrl} alt='map' />}
+      <article className="Park-card-info">
       <h2>{park.name}</h2>
       <h3>{park.fullName}</h3>
       <h3>Designation: {park.designation}</h3>
@@ -14,8 +24,9 @@ const Park = ({ park }) => {
       <h3>Directions: {park.directionsInfo}</h3>
       <h3>LatLong: {park.latLong}</h3>
       <h3>Weather: {park.weatherInfo}</h3>
-      <a href={park.url}>Official Site</a>
-      <img src={park.images[0].url} alt={park.fullName} />
+      <a href={park.url} target="_blank" >Official Site</a>
+      <Link to="/parks" className="button">Go Back</Link>
+      </article>
     </section>
   )
 }
