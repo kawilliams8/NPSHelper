@@ -6,8 +6,8 @@ const Park = (props) => {
   console.log('Park props', props)
   return (
     <div className="Park">
-      <Link to="/parks/" className="button">Go Back</Link>
-      <section className="Park">
+      <Link to="/parks" className="button">Go Back</Link>
+      {/* <section className="Park">
         <h2>{props.park.name}</h2>
         <h3>{props.park.fullName}</h3>
         <h3>Designation: {props.park.designation}</h3>
@@ -18,7 +18,7 @@ const Park = (props) => {
         <h3>Weather: {props.park.weatherInfo}</h3>
         <a href={props.park.url}>Official Site</a>
         <img src={props.park.images[0].url} alt={props.park.fullName} />
-      </section>
+      </section> */}
     </div>
   )
 }

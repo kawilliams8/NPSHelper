@@ -30,13 +30,15 @@ export default class App extends Component {
   render() {
     const natlParks = this.state.parks.filter(park => park.designation === "National Park");
     natlParks.map(park => park.type = "parks")
+    natlParks.map((park, index) => park.id = index)
     const natlMonts = this.state.parks.filter(park => park.designation === "National Monument");
-    natlMonts.map(park => park.type = "monuments")
+    natlMonts.map((park, index) => park.type = "monuments")
     const natlOthers = this.state.parks.filter(park => park.designation !== "National Park" && park.designation !== "National Monument");
-    natlOthers.map(park => park.type = "others")
+    natlOthers.map((park, index) => park.type = "others")
 
     return (
       <main className="App">
+      {console.log(natlParks)}
         <header className="App-header">
           <NavLink to="/" className="NavText">Home</NavLink>
           <NavLink to="/parks" className="NavText">National Parks</NavLink>
@@ -48,22 +50,22 @@ export default class App extends Component {
         <Route exact path='/monuments' render={() => <ParksContainer parks={natlMonts} />} />
         <Route exact path='/others' render={() => <ParksContainer parks={natlOthers} />} />
 
-        <Route path='parks/:parkCode' render={({ match }) => {
+        <Route path='/parks/:parkCode' render={({ match }) => {
           const { id } = match.params;
           const park = this.state.parks.find(park => park.id == id);
-          console.log(park)
+          console.log('park in Route', park)
           return <Park {...park}/>
         }} />
-        <Route path='monuments/:parkCode' render={({ match }) => {
+        <Route path='/monuments/:parkCode' render={({ match }) => {
           const { id } = match.params;
           const park = this.state.parks.find(park => park.id == id);
-          console.log(park)
+          console.log('park in Route', park)
           return <Park {...park} />
         }} />
-        <Route path='others/:parkCode' render={({ match }) => {
+        <Route path='/others/:parkCode' render={({ match }) => {
           const { id } = match.params;
           const park = this.state.parks.find(park => park.id == id);
-          console.log(park)
+          console.log('park in Route', park)
           return <Park {...park} />
         }} />
       </main>
