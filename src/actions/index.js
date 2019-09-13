@@ -3,6 +3,16 @@ export const storeParks = parks => ({
   parks
 });
 
+export const storeMonts = monts => ({
+  type: 'STORE_MONTS',
+  monts
+});
+
+export const storeOthers = others => ({
+  type: 'STORE_OTHERS',
+  others
+});
+
 export const addFavorite = park => ({
   type: 'ADD_FAVORITE',
   park

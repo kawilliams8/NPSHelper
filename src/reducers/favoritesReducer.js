@@ -1,4 +1,4 @@
-export const favoritesReducer = (state = [], action) => {
+const favoritesReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_FAVORITE':
       return [...state, { id: Date.now(), park: action.park, isFavorite: true }];
@@ -9,3 +9,5 @@ export const favoritesReducer = (state = [], action) => {
       return state;
   }
 }
+
+export default favoritesReducer;

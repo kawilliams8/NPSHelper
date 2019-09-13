@@ -1,4 +1,4 @@
-export const storeParksReducer = (state = [], action) => {
+const storeParksReducer = (state = [], action) => {
   switch (action.type) {
     case 'STORE_PARKS':
       return action.parks;
@@ -6,3 +6,5 @@ export const storeParksReducer = (state = [], action) => {
       return state;
   }
 }
+
+export default storeParksReducer
