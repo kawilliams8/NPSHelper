@@ -1,19 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Park.css';
 
-const Park = ({park}) => {
+const Park = (props) => {
+  console.log('Park props', props)
   return (
-    <section className="Park">
-      <h2>{park.name}</h2>
-      <h3>{park.fullName}</h3>
-      <h3>Designation: {park.designation}</h3>
-      <h3>Home State: {park.states}</h3>
-      <h3>{park.description}</h3>
-      <h3>Directions: {park.directionsInfo}</h3>
-      <h3>LatLong: {park.latLong}</h3>
-      <h3>Weather: {park.weatherInfo}</h3>
-      <a href={park.url}>Official Site</a>
-    </section>
+    <div className="Park">
+      <Link to="/parks/" className="button">Go Back</Link>
+      <section className="Park">
+        <h2>{props.park.name}</h2>
+        <h3>{props.park.fullName}</h3>
+        <h3>Designation: {props.park.designation}</h3>
+        <h3>Home State: {props.park.states}</h3>
+        <h3>{props.park.description}</h3>
+        <h3>Directions: {props.park.directionsInfo}</h3>
+        <h3>LatLong: {props.park.latLong}</h3>
+        <h3>Weather: {props.park.weatherInfo}</h3>
+        <a href={props.park.url}>Official Site</a>
+        <img src={props.park.images[0].url} alt={props.park.fullName} />
+      </section>
+    </div>
   )
 }
 

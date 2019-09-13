@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import Home from '../Home/Home';
-
-import './App.css';
 import ParksContainer from '../../components/ParksContainer/ParksContainer';
 import Park from '../Park/Park';
-import TempParkData from '../App/TempData';
-import { key } from './key.js';
+import './App.css';
 
-class App extends Component {
+import { key } from './key.js';
+import TempParkData from '../App/TempData';
+
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -29,22 +28,45 @@ class App extends Component {
   }
 
   render() {
+    const natlParks = this.state.parks.filter(park => park.designation === "National Park");
+    natlParks.map(park => park.type = "parks")
+    const natlMonts = this.state.parks.filter(park => park.designation === "National Monument");
+    natlMonts.map(park => park.type = "monuments")
+    const natlOthers = this.state.parks.filter(park => park.designation !== "National Park" && park.designation !== "National Monument");
+    natlOthers.map(park => park.type = "others")
+
     return (
       <main className="App">
-        <Router>
         <header className="App-header">
-          <NavLink to="/parks" className="NavText">Home</NavLink>  
+          <NavLink to="/" className="NavText">Home</NavLink>
+          <NavLink to="/parks" className="NavText">National Parks</NavLink>
+          <NavLink to="/monuments" className="NavText">National Monuments</NavLink>
+          <NavLink to="/others" className="NavText">Other Sites</NavLink>
         </header>
-        <Route exact path='/parks' render={ () => <ParksContainer parks={this.state.parks}/>} />
-        <Route path='/parks/:id' render={ ({ match }) => {
-          const { parkCode } = match.params;
-          const park = this.state.parks.find(park => park.parkCode === parkCode);
-          return <Park park={park}/>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/parks' render={ () => <ParksContainer parks={natlParks}/>} />
+        <Route exact path='/monuments' render={() => <ParksContainer parks={natlMonts} />} />
+        <Route exact path='/others' render={() => <ParksContainer parks={natlOthers} />} />
+
+        <Route path='parks/:parkCode' render={({ match }) => {
+          const { id } = match.params;
+          const park = this.state.parks.find(park => park.id == id);
+          console.log(park)
+          return <Park {...park}/>
         }} />
-        </Router>
+        <Route path='monuments/:parkCode' render={({ match }) => {
+          const { id } = match.params;
+          const park = this.state.parks.find(park => park.id == id);
+          console.log(park)
+          return <Park {...park} />
+        }} />
+        <Route path='others/:parkCode' render={({ match }) => {
+          const { id } = match.params;
+          const park = this.state.parks.find(park => park.id == id);
+          console.log(park)
+          return <Park {...park} />
+        }} />
       </main>
     )
   }
 }
-
-export default App;
