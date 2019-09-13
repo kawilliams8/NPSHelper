@@ -38,7 +38,6 @@ export default class App extends Component {
 
     return (
       <main className="App">
-      {console.log(natlParks)}
         <header className="App-header">
           <NavLink to="/" className="NavText">Home</NavLink>
           <NavLink to="/parks" className="NavText">National Parks</NavLink>
@@ -51,22 +50,19 @@ export default class App extends Component {
         <Route exact path='/others' render={() => <ParksContainer parks={natlOthers} />} />
 
         <Route path='/parks/:parkCode' render={({ match }) => {
-          const { id } = match.params;
-          const park = this.state.parks.find(park => park.id == id);
-          console.log('park in Route', park)
-          return <Park {...park}/>
+          const { parkCode } = match.params;
+          const park = this.state.parks.find(park => park.parkCode === parkCode);
+          return <Park park={park}/>
         }} />
         <Route path='/monuments/:parkCode' render={({ match }) => {
-          const { id } = match.params;
-          const park = this.state.parks.find(park => park.id == id);
-          console.log('park in Route', park)
-          return <Park {...park} />
+          const { parkCode } = match.params;
+          const park = this.state.parks.find(park => park.parkCode === parkCode);
+          return <Park park={park} />
         }} />
         <Route path='/others/:parkCode' render={({ match }) => {
-          const { id } = match.params;
-          const park = this.state.parks.find(park => park.id == id);
-          console.log('park in Route', park)
-          return <Park {...park} />
+          const { parkCode } = match.params;
+          const park = this.state.parks.find(park => park.parkCode === parkCode);
+          return <Park park={{...park}} />
         }} />
       </main>
     )
