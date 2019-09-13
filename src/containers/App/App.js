@@ -28,7 +28,7 @@ export class App extends Component {
     // .then(() => this.setState({isLoading: false}))
     // .catch(error => this.setState({error: error.message}))
     storeParks(TempParkData)
-    this.props.storeParks
+    this.props.storeParks(TempParkData)
   }
 
   render() {
