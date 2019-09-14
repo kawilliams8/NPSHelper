@@ -53,7 +53,7 @@ export class App extends Component {
           <NavLink to="/parks" className="NavText">National Parks</NavLink>
           <NavLink to="/monuments" className="NavText">National Monuments</NavLink>
           <NavLink to="/others" className="NavText">Other Sites</NavLink>
-          <NavLink to="/favorites" className="NavText">Favorite Sites</NavLink>
+          <NavLink to="/favorites" className="NavText">My Itinerary</NavLink>
         </header>
         {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
         <Route exact path='/' component={Home} />
@@ -87,14 +87,14 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   parks: state.parks,
   monts: state.monts,
   others: state.others,
   favorites: state.favorites
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   storeParks: parks => dispatch(storeParks(parks)),
   storeMonts: monts => dispatch(storeMonts(monts)),
   storeOthers: others => dispatch(storeOthers(others)),
