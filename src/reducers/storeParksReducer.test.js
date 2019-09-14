@@ -1,7 +1,6 @@
-import * as actions from '../actions';
-import { shallow } from 'enzyme';
+import storeParksReducer from '../reducers/storeParksReducer.js';
 
-describe('Actions', () => {
+describe('storeParksReducer', () => {
 
   let mockParks;
   beforeEach(() => {
@@ -33,35 +32,31 @@ describe('Actions', () => {
       "id": "813548D1-F8EA-4C07-8878-17FB3C385378",
       "fullName": "Augusta Canal National Heritage Area"
     }];
-    });
+  });
 
-  it('should return an action for STORE_PARKS', () => {
-    const expected = {
-      type: 'STORE_PARKS',
+  it('should return initial state by default', () => {
+    const expected = [];
+    const result = storeParksReducer(undefined, {});
+    expect(result).toEqual(expected);
+  });
+
+  it('should return park objects in state when you store the parks', () => {
+    const mockAction = {
+      type: "STORE_PARKS",
       parks: mockParks
     }
-    let result = actions.storeParks(mockParks);
+    const expected = mockParks;
+    const result = storeParksReducer(undefined, mockAction);
     expect(result).toEqual(expected);
   });
 
-  it('should return an action for STORE_MONTS', () => {
-    const expected = {
-      type: 'STORE_MONTS',
-      monts: mockParks
+  it('should return initial state when you pass a bad action', () => {
+    const mockAction = {
+      type: "BAD_ACTION",
+      parks: mockParks
     }
-
-    let result = actions.storeMonts(mockParks);
+    const expected = [];
+    const result = storeParksReducer(undefined, mockAction);
     expect(result).toEqual(expected);
   });
-
-  it('should return an action for STORE_OTHERS', () => {
-    const expected = {
-      type: 'STORE_OTHERS',
-      others: mockParks
-    }
-
-    let result = actions.storeOthers(mockParks);
-    expect(result).toEqual(expected);
-  });
-
 });

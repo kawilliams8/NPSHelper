@@ -7,4 +7,4 @@ const storeParksReducer = (state = [], action) => {
   }
 }
 
-export default storeParksReducer
+export default storeParksReducer;

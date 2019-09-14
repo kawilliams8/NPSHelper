@@ -1,11 +1,10 @@
-import * as actions from '../actions';
-import { shallow } from 'enzyme';
+import storeOthersReducer from '../reducers/storeOthersReducer.js';
 
-describe('Actions', () => {
+describe('storeOthersReducer', () => {
 
-  let mockParks;
+  let mockOthers;
   beforeEach(() => {
-    mockParks = [{
+    mockOthers = [{
       "states": "DC",
       "directionsInfo": "The memorial is located at the corner of...",
       "directionsUrl": "http://www.nps.gov/afam/planyourvisit/directions.htm",
@@ -33,35 +32,31 @@ describe('Actions', () => {
       "id": "813548D1-F8EA-4C07-8878-17FB3C385378",
       "fullName": "Augusta Canal National Heritage Area"
     }];
-    });
+  });
 
-  it('should return an action for STORE_PARKS', () => {
-    const expected = {
-      type: 'STORE_PARKS',
-      parks: mockParks
-    }
-    let result = actions.storeParks(mockParks);
+  it('should return initial state by default', () => {
+    const expected = [];
+    const result = storeOthersReducer(undefined, {});
     expect(result).toEqual(expected);
   });
 
-  it('should return an action for STORE_MONTS', () => {
-    const expected = {
-      type: 'STORE_MONTS',
-      monts: mockParks
+  it('should return park objects in state when you store the parks', () => {
+    const mockAction = {
+      type: "STORE_OTHERS",
+      others: mockOthers
     }
-
-    let result = actions.storeMonts(mockParks);
+    const expected = mockOthers;
+    const result = storeOthersReducer(undefined, mockAction);
     expect(result).toEqual(expected);
   });
 
-  it('should return an action for STORE_OTHERS', () => {
-    const expected = {
-      type: 'STORE_OTHERS',
-      others: mockParks
+  it('should return initial state when you pass a bad action', () => {
+    const mockAction = {
+      type: "BAD_ACTION",
+      others: mockOthers
     }
-
-    let result = actions.storeOthers(mockParks);
+    const expected = [];
+    const result = storeOthersReducer(undefined, mockAction);
     expect(result).toEqual(expected);
   });
-
 });
