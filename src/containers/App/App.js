@@ -53,7 +53,7 @@ export class App extends Component {
           <NavLink to="/parks" className="NavText">National Parks</NavLink>
           <NavLink to="/monuments" className="NavText">National Monuments</NavLink>
           <NavLink to="/others" className="NavText">Other Sites</NavLink>
-          <NavLink to="/favorites" className="NavText">My Itinerary</NavLink>
+          <NavLink to="/favorites" className="NavText">My Favorites</NavLink>
         </header>
         {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
         <Route exact path='/' component={Home} />

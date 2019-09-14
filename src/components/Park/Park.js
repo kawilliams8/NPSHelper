@@ -26,8 +26,8 @@ export const Park = (props) => {
       <article className="Park-card-info">
       <h2>{park.name}</h2>
       <h3>{park.fullName}</h3>
-      <button onClick={() => props.addFavorite(park)}>Add to Itinerary</button>
-      <button onClick={() => props.removeFavorite(park)}>Remove from Itinerary</button>
+      <button onClick={() => props.addFavorite(park)}>Add to Favorites</button>
+      <button onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
       <h3>Designation: {park.designation}</h3>
       <h3>Home State: {park.states}</h3>
       <h3>{park.description}</h3>
