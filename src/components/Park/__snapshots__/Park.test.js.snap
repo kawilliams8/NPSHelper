@@ -23,6 +23,16 @@ exports[`Park should match the snapshot 1`] = `
     <h3>
       African American Civil War Memorial
     </h3>
+    <button
+      onClick={[Function]}
+    >
+      Add to Itinerary
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Remove from Itinerary
+    </button>
     <h3>
       Designation: 
     </h3>

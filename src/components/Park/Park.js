@@ -6,7 +6,7 @@ import notFound from '../../images/image-not-found.jpg';
 import { key } from '../../containers/App/key';
 import './Park.css';
 
-const Park = (props) => { 
+export const Park = (props) => { 
   const { park } = props;
   let mapUrl = "";
   if (park.latLong) {
@@ -27,6 +27,7 @@ const Park = (props) => {
       <h2>{park.name}</h2>
       <h3>{park.fullName}</h3>
       <button onClick={() => props.addFavorite(park)}>Add to Itinerary</button>
+      <button onClick={() => props.removeFavorite(park)}>Remove from Itinerary</button>
       <h3>Designation: {park.designation}</h3>
       <h3>Home State: {park.states}</h3>
       <h3>{park.description}</h3>
