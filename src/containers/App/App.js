@@ -28,11 +28,11 @@ export class App extends Component {
     // .then(data => this.filterParks(data.data))
     // .then(() => this.setState({isLoading: false}))
     // .catch(error => this.setState({error: error.message}))
-    this.filterParks(this.state.parks);
+    this.filterAndStoreParks(this.state.parks);
     this.setState({isLoading: false})
   }
 
-  filterParks = (data) => {
+  filterAndStoreParks = (data) => {
     let natlParks = data.filter(park => park.designation === "National Park");
     natlParks.map(park => park.type = "parks")
     this.props.storeParks(natlParks);

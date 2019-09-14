@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './ParksContainer.css';
 
-const ParksContainer = (props) => {
+export const ParksContainer = (props) => {
   const { type } = props;
   const parkCards = props[type].map(park => {
     const { id, parkCode, name, states, type } = park;
@@ -24,7 +24,7 @@ const ParksContainer = (props) => {
   )
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   parks: state.parks,
   monts: state.monts,
   others: state.others,
