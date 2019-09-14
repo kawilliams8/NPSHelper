@@ -9,12 +9,13 @@ import Park from '../Park/Park';
 import './App.css';
 
 import { key } from './key.js';
-import TempParkData from '../App/TempData';
+import TempParksData from '../App/TempData';
 
 export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      parks: TempParksData,
       error: "",
       isLoading: true
     }
@@ -22,11 +23,13 @@ export class App extends Component {
 
   componentDidMount() {
     // Comment in fetch and remove temp data, reassign state to array
-    fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key.nps_api_key}`)
-    .then(res => res.json())
-    .then(data => this.filterParks(data.data))
-    .then(() => this.setState({isLoading: false}))
-    .catch(error => this.setState({error: error.message}))
+    // fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key.nps_api_key}`)
+    // .then(res => res.json())
+    // .then(data => this.filterParks(data.data))
+    // .then(() => this.setState({isLoading: false}))
+    // .catch(error => this.setState({error: error.message}))
+    this.filterParks(this.state.parks);
+    this.setState({isLoading: false})
   }
 
   filterParks = (data) => {
@@ -36,7 +39,6 @@ export class App extends Component {
     let natlMonts = data.filter(park => park.designation === "National Monument");
     natlMonts.map(park => park.type = "monuments");
     this.props.storeMonts(natlMonts);
-    this.setState({ monuments: natlMonts });
     let natlOthers = data.filter(park => park.designation !== "National Park" && park.designation !== "National Monument");
     natlOthers.map(park => park.type = "others");
     this.props.storeOthers(natlOthers);
@@ -54,10 +56,10 @@ export class App extends Component {
         </header>
         {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
         <Route exact path='/' component={Home} />
-        <Route exact path='/parks' render={ () => <ParksContainer parks={this.props.parks}/>} />
-        <Route exact path='/monuments' render={() => <ParksContainer parks={this.props.monuments} />} />
-        <Route exact path='/others' render={() => <ParksContainer parks={this.props.others} />} />
-        <Route exact path='/favorites' render={() => <ParksContainer parks={this.props.favorites} />} />
+        <Route exact path='/parks' render={() => <ParksContainer type={"parks"} />} />
+        <Route exact path='/monuments' render={() => <ParksContainer type={"monts"} />} />
+        <Route exact path='/others' render={() => <ParksContainer type={"others"} />} />
+        <Route exact path='/favorites' render={() => <ParksContainer type={"favorites"} />} />
 
         <Route path='/parks/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
@@ -66,18 +68,18 @@ export class App extends Component {
         }} />
         <Route path='/monuments/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
-          const park = this.props.parks.find(park => park.parkCode === parkCode);
+          const park = this.props.monts.find(park => park.parkCode === parkCode);
           return <Park park={park} />
         }} />
         <Route path='/others/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
-          const park = this.props.parks.find(park => park.parkCode === parkCode);
-          return <Park park={{...park}} />
+          const park = this.props.others.find(park => park.parkCode === parkCode);
+          return <Park park={park} />
         }} />
         <Route path='/favorites/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
-          const park = this.props.parks.find(park => park.parkCode === parkCode);
-          return <Park park={{ ...park }} />
+          const park = this.props.favorites.find(park => park.parkCode === parkCode);
+          return <Park park={park} />
         }} />
       </main>
     )

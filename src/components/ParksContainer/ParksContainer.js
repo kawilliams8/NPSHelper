@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './ParksContainer.css';
 
-const ParksContainer = ({ parks }) => {
-
-  console.log('in PC', parks)
-  const parkCards = parks.map(park => {
+const ParksContainer = (props) => {
+  const { type } = props;
+  const parkCards = props[type].map(park => {
     const { id, parkCode, name, states, type } = park;
     return (
       <Link to={`/${type}/${parkCode}`}>
@@ -24,4 +24,11 @@ const ParksContainer = ({ parks }) => {
   )
 }
 
-export default ParksContainer;
+const mapStateToProps = state => ({
+  parks: state.parks,
+  monts: state.monts,
+  others: state.others,
+  favorites: state.favorites
+});
+
+export default connect(mapStateToProps)(ParksContainer);
