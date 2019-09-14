@@ -31,6 +31,9 @@ export class App extends Component {
     // using mockData, this.state.parks = TempParksData
     this.filterAndStoreParks(this.state.parks);
     this.setState({isLoading: false})
+
+    fetch("https://data.colorado.gov/resource/tsn8-y22x.json")
+    .then(res => console.log(res))
   }
 
   filterAndStoreParks = (data) => {
