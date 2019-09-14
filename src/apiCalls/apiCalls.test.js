@@ -4,6 +4,7 @@ describe('fetchParks', () => {
 
     let mockResponse;
     beforeEach(() => {
+
       mockResponse = [
         {
           "states": "DC",
@@ -35,26 +36,26 @@ describe('fetchParks', () => {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve(mockResponse)
-        });
+        })
       });
     });
 
-    it("should call fetch with the correct url", () => {
+    it("should call fetch with the correct url HAPPY", () => {
       fetchParks();
       expect(window.fetch).toHaveBeenCalledWith(
         `https://developer.nps.gov/api/v1/parks?api_key=QomvgsvmorPYvw6JPfQ2Puk6z7iasUP1tR7gloBQ`
       );
     });
 
-    it("should return an array of park objects", () => {
+    it("should return an array of park objects HAPPY", () => {
       expect(fetchParks()).resolves.toEqual(mockResponse);
     });
 
-    it("should return an error if response is not okay", () => {
+    it("should return an error if response is not okay SAD", () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           ok: false
-        });
+        })
       });
       const result = fetchParks();
       expect(result).rejects.toEqual(
@@ -62,11 +63,11 @@ describe('fetchParks', () => {
       );
     });
 
-    it("should return an error if the promise rejects", () => {
+    it("should return an error if the promise rejects SAD", () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.reject({
           message: "The server is down."
-        });
+        })
       });
       const result = fetchParks();
       expect(result).rejects.toEqual({

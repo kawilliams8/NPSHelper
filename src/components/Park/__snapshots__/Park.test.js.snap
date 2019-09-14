@@ -1,3 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Park should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Park should match the snapshot 1`] = `
+<section
+  className="Park-card"
+>
+  <img
+    alt="African American Civil War Memorial"
+    className="Park-card-image"
+    src="https://www.nps.gov/common/uploads/structured_data/3C816B50-1DD8-B71B-0BF380049FB6B6A2.jpg"
+  />
+  <img
+    alt="map"
+    className="Park-card-map"
+    src="https://api.mapbox.com/styles/v1/mapbox/light-v9/static/-77.025977,38.916554,5,0,0/500x400?access_token=pk.eyJ1Ijoia2F3aWxsaWFtczgiLCJhIjoiY2swaWNvM2liMGJ4dDNjbGV2aGhvNHVwdiJ9.omOH_S9FQH-fjgcS0iDA5A"
+  />
+  <article
+    className="Park-card-info"
+  >
+    <h2>
+      African American Civil War Memorial
+    </h2>
+    <h3>
+      African American Civil War Memorial
+    </h3>
+    <h3>
+      Designation: 
+    </h3>
+    <h3>
+      Home State: 
+      DC
+    </h3>
+    <h3>
+      Over 200,000 African-American soldiers...
+    </h3>
+    <h3>
+      Directions: 
+      The memorial is located at the corner of...
+    </h3>
+    <h3>
+      Weather: 
+      Washington DC gets to see all four seasons...
+    </h3>
+    <a
+      href="https://www.nps.gov/afam/index.htm"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Official Site
+    </a>
+    <Link
+      className="button"
+      to="/parks"
+    >
+      Go Back
+    </Link>
+  </article>
+</section>
+`;

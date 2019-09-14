@@ -36,14 +36,14 @@ describe('ParksContainer', () => {
       "fullName": "Augusta Canal National Heritage Area",
       "type": "parks"
     }];
-    wrapper = shallow(<ParksContainer type={'parks'} props={mockStore}/>)
+    wrapper = shallow(<ParksContainer />);
+  });
+  
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 
-  // it.skip('should match the snapshot', () => {
-  //   expect(wrapper).toMatchSnapshot();
-  // });
-
-  it('should return an object with the mapped mockState array', () => {
+  it('should return an object with parks data from mapStateToProps', () => {
     const mockState = {
       parks: mockStore,
       type: 'STORE_PARKS'
@@ -52,7 +52,6 @@ describe('ParksContainer', () => {
       parks: mockStore
     };
     const mappedProps = mapStateToProps(mockState);
-
     expect(mappedProps).toEqual(expected);
   });
 
