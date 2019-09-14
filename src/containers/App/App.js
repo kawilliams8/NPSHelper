@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
+import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import Loading from '../../images/loading.gif';
 import Home from '../Home/Home';
@@ -8,7 +9,6 @@ import ParksContainer from '../ParksContainer/ParksContainer';
 import Park from '../../components/Park/Park';
 import './App.css';
 
-import { key } from './key.js';
 import TempParksData from '../App/TempData';
 
 export class App extends Component {
@@ -22,12 +22,13 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    // Comment in fetch and remove temp data, reassign state to array
-    // fetch(`https://developer.nps.gov/api/v1/parks?api_key=${key.nps_api_key}`)
-    // .then(res => res.json())
-    // .then(data => this.filterParks(data.data))
+    // using fetch, this.state.parks = []
+    // fetchParks()
+    // .then(data => this.filterAndStoreParks(data))
     // .then(() => this.setState({isLoading: false}))
     // .catch(error => this.setState({error: error.message}))
+
+    // using mockData, this.state.parks = TempParksData
     this.filterAndStoreParks(this.state.parks);
     this.setState({isLoading: false})
   }
