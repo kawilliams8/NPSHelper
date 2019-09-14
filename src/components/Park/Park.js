@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import notFound from '../../images/image-not-found.jpg';
-import { key } from '../App/key';
+import { key } from '../../containers/App/key';
 import './Park.css';
 
 const Park = ({ park }) => {

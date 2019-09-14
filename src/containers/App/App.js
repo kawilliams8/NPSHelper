@@ -4,8 +4,8 @@ import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from
 import { connect } from 'react-redux';
 import Loading from '../../images/loading.gif';
 import Home from '../Home/Home';
-import ParksContainer from '../../components/ParksContainer/ParksContainer';
-import Park from '../Park/Park';
+import ParksContainer from '../ParksContainer/ParksContainer';
+import Park from '../../components/Park/Park';
 import './App.css';
 
 import { key } from './key.js';
