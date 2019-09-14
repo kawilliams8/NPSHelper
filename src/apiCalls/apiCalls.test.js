@@ -2,9 +2,8 @@ import { fetchParks } from "./apiCalls";
 
 describe('fetchParks', () => {
 
-    let mockResponse, mockKey;
+    let mockResponse;
     beforeEach(() => {
-      mockKey = 1;  
       mockResponse = [
         {
           "states": "DC",
@@ -48,7 +47,6 @@ describe('fetchParks', () => {
     });
 
     it("should return an array of park objects", () => {
-      
       expect(fetchParks()).resolves.toEqual(mockResponse);
     });
 
@@ -67,12 +65,12 @@ describe('fetchParks', () => {
     it("should return an error if the promise rejects", () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.reject({
-          message: "Server is down."
+          message: "The server is down."
         });
       });
       const result = fetchParks();
       expect(result).rejects.toEqual({
-        message: "Server is down."
+        message: "The server is down."
       });
     });
   });
