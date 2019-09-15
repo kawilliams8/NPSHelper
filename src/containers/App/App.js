@@ -50,11 +50,11 @@ export class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-          <NavLink to="/" className="NavText">HOME</NavLink>
-          <NavLink to="/parks" className="NavText">NATIONAL PARKS</NavLink>
-          <NavLink to="/monuments" className="NavText">NATIONAL MONUMENTS</NavLink>
-          <NavLink to="/others" className="NavText">OTHER SITES</NavLink>
-          <NavLink to="/favorites" className="NavText">MY FAVORITES</NavLink>
+          <NavLink to="/" className="App-nav-text">HOME</NavLink>
+          <NavLink to="/parks" className="App-nav-text">NATIONAL PARKS</NavLink>
+          <NavLink to="/monuments" className="App-nav-text">NATIONAL MONUMENTS</NavLink>
+          <NavLink to="/others" className="App-nav-text">OTHER SITES</NavLink>
+          <NavLink to="/favorites" className="App-nav-text">MY FAVORITES</NavLink>
         </header>
         {this.state.isLoading && <h2 className="App-welcome">Welcome to NPS Helper</h2>}
         {this.state.isLoading && <img src={Loading} alt="mountains animation" className="App-loading"/>}

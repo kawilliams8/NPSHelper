@@ -5,7 +5,6 @@
 //Cream #e3d8ab Mountain and Lake
 //White #eff5e7 Lettering
 
-
 body {
   font-family: "NationalPark-Thin";
 }
@@ -17,8 +16,9 @@ body {
 }
 
 .App-welcome {
-  font-family: "NationalPark-Outline";
-  font-size: 68px;
+  color: #eff5e7;
+  font-family: 'Roboto Slab', serif;
+  font-size: 50px;
   margin: 10px;
 }
 
@@ -39,12 +39,13 @@ body {
   justify-content: center;
 }
 
-.App-link {
-  color: red;
-}
-
-.NavText {
+.App-nav-text {
+  color: #eff5e7;
   font-family: "NationalPark-Regular";
   font-size: 36px;
   padding: 20px;
+}
+
+.App-nav-text:hover {
+  color: #1f4045;
 }

@@ -1,3 +1,10 @@
+//Brown #473328 Sign backgrounds/edges
+
+//Cocoa Brown #916451 Background
+//Dark Blue-Green #1f4045 Trees and Buffalo Outline
+//Cream #e3d8ab Mountain and Lake
+//White #eff5e7 Lettering
+
 .Home {
   background-image: url("../../assets/images/topo.png");
   height: 90vh;
@@ -5,8 +12,9 @@
 
 .Home-welcome {
   margin-top: 0px;
+  color: #eff5e7;
 }
 
 .Home-arrowhead {
-  height: 200px;
+  height: 250px;
 }
