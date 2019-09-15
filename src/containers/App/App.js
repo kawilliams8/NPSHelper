@@ -4,6 +4,7 @@ import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from
 import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import Loading from '../../assets/images/loading.gif';
+import Arrowhead from '../../assets/images/US-NationalParkService-Logo.svg';
 import Home from '../Home/Home';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Park from '../../components/Park/Park';
@@ -49,6 +50,7 @@ export class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
+          <img src={Arrowhead} alt="National Parks Service arrowhead logo" />
           <NavLink to="/" className="NavText">HOME</NavLink>
           <NavLink to="/parks" className="NavText">NATIONAL PARKS</NavLink>
           <NavLink to="/monuments" className="NavText">NATIONAL MONUMENTS</NavLink>
