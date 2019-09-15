@@ -34,7 +34,7 @@ export const Park = (props) => {
       <h3>Directions: {park.directionsInfo}</h3>
       <h3>Weather: {park.weatherInfo}</h3>
       <a href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
-      <Link to="/parks" className="button">Go Back</Link>
+        
       </article>
     </section>
   )

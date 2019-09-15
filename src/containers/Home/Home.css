@@ -1,20 +1,31 @@
-//Brown #473328 Sign backgrounds/edges
-
-//Cocoa Brown #916451 Background
-//Dark Blue-Green #1f4045 Trees and Buffalo Outline
-//Cream #e3d8ab Mountain and Lake
-//White #eff5e7 Lettering
-
 .Home {
-  background-image: url("../../assets/images/topo.png");
+  background-image: url("../../assets/images/topo-gray.png");
   height: 90vh;
 }
 
 .Home-welcome {
-  margin-top: 0px;
   color: #eff5e7;
+  font-family: 'Roboto Slab', serif;
+  font-size: 50px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.Home-nps-info {
+  background-color: #F5F5F5;
+  border-radius: 3px;
+  display: flex;
+  margin: auto;
+  width: 90%;
 }
 
 .Home-arrowhead {
-  height: 250px;
+  height: 300px;
+  margin: 20px;
+}
+
+.Home-info-wrapper {
+  padding: 10px;
+  text-align: left;
 }

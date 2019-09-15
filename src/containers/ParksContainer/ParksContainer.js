@@ -6,12 +6,17 @@ import './ParksContainer.css';
 export const ParksContainer = (props) => {
   const { type } = props;
   const parkCards = props[type].map(park => {
-    const { id, parkCode, name, states, type } = park;
+    console.log(park)
+    const { id, parkCode, name, states, type, designation, description } = park;
     return (
-      <Link to={`/${type}/${parkCode}`}>
+      <Link to={`/${type}/${parkCode}`} style={{ textDecoration: 'none' }}>
         <div className="Park-link" key={id} type={type}>
-          <h3>{name}</h3>
-          <h4>{states}</h4>
+          <h3 className="Park-link-heading">{name}</h3>
+          <h4 className="Park-link-body">{designation}</h4>
+          <h4 className="Park-link-body">{states}</h4>
+          <p className="Park-link-description">{description}</p>
+          <p className="Park-link-ellipsis">...</p>
+          <Link to={`/parks/${parkCode}`} className="Park-link-more">Read More...</Link>
         </div>
       </Link>
     )

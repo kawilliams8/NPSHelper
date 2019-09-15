@@ -17,10 +17,46 @@
 
 .Park-link {
   background-color: #F5F5F5;
+  border: .5px solid #989898;
   border-radius: 3px;
-  height: 225px;
+  display: block;
+  font-family: "Roboto Slab";
+  height: 250px;
   margin: 10px;
   object-fit: cover;
   padding: 10px;
+  text-align: center;
   width: 300px;
+}
+
+.Park-link-heading {
+  color: black;
+  font-size: 21px;
+  margin: 1px;
+}
+
+.Park-link-body {
+  color: #585858;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.Park-link-description {
+  color: #585858;
+  font-size: 12px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.Park-link-ellipsis {
+  color: black;
+  font-size: 36px;
+  line-height: 0px;
+  margin: 0;
+}
+
+.Park-link-more {
+  color: #1f4045;
+  font-size: 16px;
+  line-height: 6;
 }
