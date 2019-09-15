@@ -1,3 +1,7 @@
+body {
+  font-family: "NationalPark-Regular";
+}
+
 .App {
   text-align: center;
 }
@@ -13,4 +17,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.NavText {
+  font-family: "NationalPark-Heavy";
+  font-size: 36px;
+  padding: 20px;
 }

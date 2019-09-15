@@ -3,7 +3,7 @@ import { Route, NavLink } from 'react-router-dom';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
 import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
-import Loading from '../../images/loading.gif';
+import Loading from '../../assets/images/loading.gif';
 import Home from '../Home/Home';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Park from '../../components/Park/Park';
@@ -49,11 +49,11 @@ export class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-          <NavLink to="/" className="NavText">Home</NavLink>
-          <NavLink to="/parks" className="NavText">National Parks</NavLink>
-          <NavLink to="/monuments" className="NavText">National Monuments</NavLink>
-          <NavLink to="/others" className="NavText">Other Sites</NavLink>
-          <NavLink to="/favorites" className="NavText">My Favorites</NavLink>
+          <NavLink to="/" className="NavText">HOME</NavLink>
+          <NavLink to="/parks" className="NavText">NATIONAL PARKS</NavLink>
+          <NavLink to="/monuments" className="NavText">NATIONAL MONUMENTS</NavLink>
+          <NavLink to="/others" className="NavText">OTHER SITES</NavLink>
+          <NavLink to="/favorites" className="NavText">MY FAVORITES</NavLink>
         </header>
         {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
         <Route exact path='/' component={Home} />
