@@ -4,11 +4,11 @@ import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from
 import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import Loading from '../../assets/images/loading.gif';
-import Arrowhead from '../../assets/images/US-NationalParkService-Logo.svg';
 import Home from '../Home/Home';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Park from '../../components/Park/Park';
 import './App.css';
+import NoMatch from '../../components/NoMatch/NoMatch';
 
 import TempParksData from '../App/TempData';
 
@@ -50,7 +50,6 @@ export class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-          <img src={Arrowhead} alt="National Parks Service arrowhead logo" />
           <NavLink to="/" className="NavText">HOME</NavLink>
           <NavLink to="/parks" className="NavText">NATIONAL PARKS</NavLink>
           <NavLink to="/monuments" className="NavText">NATIONAL MONUMENTS</NavLink>
@@ -63,6 +62,7 @@ export class App extends Component {
         <Route exact path='/monuments' render={() => <ParksContainer type={"monts"} />} />
         <Route exact path='/others' render={() => <ParksContainer type={"others"} />} />
         <Route exact path='/favorites' render={() => <ParksContainer type={"favorites"} />} />
+        <Route component={NoMatch} />
 
         <Route path='/parks/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
