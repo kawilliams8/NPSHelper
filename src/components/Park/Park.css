@@ -26,22 +26,20 @@
   text-align: center;
 }
 
+.Park-images-wrapper {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
 .Park-card-image {
-  align-self: flex-start;
   height: 400px;
   margin: 10px;
   object-fit: cover;
   width: 500px;
 }
 
-.Park-card-map {
-  align-self: flex-start;
-  margin: 10px;
-  width: 50%;
-}
-
 .Park-card-info {
-  align-self: flex-end;
   margin: 10px;
   text-align: center;
   width: 50%;

@@ -6,7 +6,6 @@ import './ParksContainer.css';
 export const ParksContainer = (props) => {
   const { type } = props;
   const parkCards = props[type].map(park => {
-    console.log(park)
     const { id, parkCode, name, states, type, designation, description } = park;
     return (
       <Link to={`/${type}/${parkCode}`} style={{ textDecoration: 'none' }}>

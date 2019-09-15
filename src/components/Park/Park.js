@@ -23,8 +23,10 @@ export const Park = (props) => {
     <section className="Park">
       <h2 className="Park-heading">{park.name}</h2>
       <h3 className="Park-subheading">Full Name: {park.fullName}</h3>
+      <div className="Park-images-wrapper">
       <img className="Park-card-image" src={img} alt={park.fullName} />
-      {park.latLong && <img className="Park-card-map" src={mapUrl} alt='map' />}
+      {park.latLong && <img className="Park-card-image" src={mapUrl} alt='map' />}
+      </div>
       <article className="Park-card-info">
         <button onClick={() => props.addFavorite(park)}>Add to Favorites</button>
         <button onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
