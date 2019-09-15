@@ -1,8 +1,9 @@
 .Park {
-  border: black 2px solid;
+  font-family: "Roboto Slab";
+  background-image: url("../../assets/images/topo.png");
+  border: .5px solid #989898;
   padding: 10px;
-  margin: 20px;
-  width: 400px;
+  margin: 28px;
 }
 
 .Park-card {
@@ -10,6 +11,19 @@
   display: flex;
   margin: auto;
   width: 90%;
+}
+
+.Park-heading {
+  font-size: 50px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.Park-subheading {
+  font-size: 21px;
+  margin: 10px;
+  text-align: center;
 }
 
 .Park-card-image {

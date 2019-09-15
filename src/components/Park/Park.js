@@ -20,21 +20,21 @@ export const Park = (props) => {
   }
 
   return (
-    <section className="Park-card">
+    <section className="Park">
+      <h2 className="Park-heading">{park.name}</h2>
+      <h3 className="Park-subheading">Full Name: {park.fullName}</h3>
       <img className="Park-card-image" src={img} alt={park.fullName} />
       {park.latLong && <img className="Park-card-map" src={mapUrl} alt='map' />}
       <article className="Park-card-info">
-      <h2>{park.name}</h2>
-      <h3>{park.fullName}</h3>
-      <button onClick={() => props.addFavorite(park)}>Add to Favorites</button>
-      <button onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
-      <h3>Designation: {park.designation}</h3>
-      <h3>Home State: {park.states}</h3>
-      <h3>{park.description}</h3>
-      <h3>Directions: {park.directionsInfo}</h3>
-      <h3>Weather: {park.weatherInfo}</h3>
-      <a href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
-        
+        <button onClick={() => props.addFavorite(park)}>Add to Favorites</button>
+        <button onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
+        <h3>Designation: {park.designation}</h3>
+        <h3>Home State: {park.states}</h3>
+        <h3>{park.description}</h3>
+        <h3>Directions: {park.directionsInfo}</h3>
+        <h3>Weather: {park.weatherInfo}</h3>
+        <a href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
+        <Link to="/parks" className="button">Go Back</Link>
       </article>
     </section>
   )
