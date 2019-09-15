@@ -5,8 +5,8 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="Home">
-      <h2>Home Component Here</h2>
-      <img src={Arrowhead} alt="National Parks Service arrowhead logo" />
+      <h2 className="Home-welcome">Home Component Here</h2>
+      <img src={Arrowhead} alt="National Parks Service arrowhead logo" className="Home-arrowhead"/>
     </div>
   )
 }

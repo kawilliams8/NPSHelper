@@ -4,7 +4,7 @@ import { ParksContainer, mapStateToProps } from '../ParksContainer/ParksContaine
 
 describe('ParksContainer', () => {
 
-  let wrapper, mockStore;
+  let wrapper, mockStore, mockAddFavorite, mockRemoveFavorite;
   beforeEach(() => {
     mockStore = [{
       "states": "DC",
@@ -36,7 +36,13 @@ describe('ParksContainer', () => {
       "fullName": "Augusta Canal National Heritage Area",
       "type": "parks"
     }];
-    wrapper = shallow(<ParksContainer />);
+    mockAddFavorite = jest.fn();
+    mockRemoveFavorite = jest.fn();
+    wrapper = shallow(<ParksContainer 
+      parks={mockStore}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+      />);
   });
   
   it('should match the snapshot', () => {

@@ -7,11 +7,18 @@ exports[`NoMatch should match snapshot 1`] = `
   <h2>
     Sorry, this page doesn't exist.
   </h2>
-  <NavLink
-    className="NavText"
-    to="/"
-  >
-    HOME
-  </NavLink>
+  <h3>
+    Return to the
+    <NavLink
+      className="NavText"
+      to="/"
+    >
+      Welcome Center
+    </NavLink>
+  </h3>
+  <img
+    alt="National Parks Service arrowhead logo"
+    src="US-NationalParkService-Logo.svg"
+  />
 </div>
 `;

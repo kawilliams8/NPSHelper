@@ -7,28 +7,44 @@
 
 
 body {
-  font-family: "NationalPark-Regular";
+  font-family: "NationalPark-Thin";
 }
 
 .App {
+  background-image: url("../../assets/images/topo-gray.png");
   text-align: center;
+  min-height: 100vh;
+}
+
+.App-welcome {
+  font-family: "NationalPark-Outline";
+  font-size: 68px;
+  margin: 10px;
+}
+
+.App-loading {
+  border-radius: 1000px;
+  height: 482px;
+  object-fit: none;
+  padding: 10px;
+  width: 485px;
 }
 
 .App-header {
   align-items: center;
-  background-color: grey;
+  background-color: #989898;
   color: white;
   display: flex;
-  height: 50px;
+  height: 100px;
   justify-content: center;
 }
 
 .App-link {
-  color: #61dafb;
+  color: red;
 }
 
 .NavText {
-  font-family: "NationalPark-Heavy";
+  font-family: "NationalPark-Regular";
   font-size: 36px;
   padding: 20px;
 }

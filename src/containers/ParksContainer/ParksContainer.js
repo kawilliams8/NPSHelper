@@ -18,7 +18,7 @@ export const ParksContainer = (props) => {
   })
 
   return (
-    <section className="ParksContainer">
+    <section className={`ParksContainer ${type}`}>
       {parkCards}
     </section>
   )
