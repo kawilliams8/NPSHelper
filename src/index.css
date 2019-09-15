@@ -6,3 +6,15 @@ html {
   padding: 0;
   max-width: 1500px;
 }
+
+a {
+  color: #eff5e7;
+}
+
+a:hover {
+  color: #585858;
+}
+
+a:active {
+  color: #473328;
+}

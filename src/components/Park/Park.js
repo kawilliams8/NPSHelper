@@ -23,21 +23,28 @@ export const Park = (props) => {
     <section className="Park">
       <h2 className="Park-heading">{park.name}</h2>
       <h3 className="Park-subheading">Full Name: {park.fullName}</h3>
+      <h3 className="Park-subheading">Designation: {park.designation}</h3>
+      <h3 className="Park-subheading">Home State: {park.states}</h3>
+      <div className="Park-button-wrapper">
+        <button className="Park-fave-button" onClick={() => props.addFavorite(park)}>Add to Favorites</button>
+        <button className="Park-fave-button" onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
+      </div>
       <div className="Park-images-wrapper">
-      <img className="Park-card-image" src={img} alt={park.fullName} />
-      {park.latLong && <img className="Park-card-image" src={mapUrl} alt='map' />}
+        <img className="Park-card-image" src={img} alt={park.fullName} />
+        {park.latLong && <img className="Park-card-image" src={mapUrl} alt='map' />}
       </div>
       <article className="Park-card-info">
-        <button onClick={() => props.addFavorite(park)}>Add to Favorites</button>
-        <button onClick={() => props.removeFavorite(park)}>Remove from Favorites</button>
-        <h3>Designation: {park.designation}</h3>
-        <h3>Home State: {park.states}</h3>
+        <h3 className="Park-info-subheading">Description:</h3>
         <h3>{park.description}</h3>
-        <h3>Directions: {park.directionsInfo}</h3>
-        <h3>Weather: {park.weatherInfo}</h3>
-        <a href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
-        <Link to="/parks" className="button">Go Back</Link>
+        <h3 className="Park-info-subheading">Directions:</h3>
+        <h3>{park.directionsInfo}</h3>
+        <h3 className="Park-info-subheading">Weather:</h3>
+        <a className="Park-weather-link" href={park.weatherInfo} target="_blank" rel="noopener noreferrer">View Current Weather Report</a>
+        <h3 className="Park-info-subheading">Further Information:</h3>
+        <a className="Park-site-link" href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
       </article>
+      
+      <Link to="/parks" className="Park-final-link">RETURN</Link>
     </section>
   )
 }
