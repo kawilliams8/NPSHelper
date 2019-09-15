@@ -1,11 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Arrowhead from '../../assets/images/US-NationalParkService-Logo.svg';
 
 const NoMatch = () => {
   return (
     <div className="NoMatch"> 
       <h2>Sorry, this page doesn't exist.</h2>
-      <NavLink to="/" className="NavText">HOME</NavLink>
+      <h3>Return to the{<NavLink to="/" className="NavText">Welcome Center</NavLink>}</h3>
+      {/* <NavLink to="/" className="NavText">Welcome Center</NavLink> */}
+      <img src={Arrowhead} alt="National Parks Service arrowhead logo" />
     </div>
   )
 }

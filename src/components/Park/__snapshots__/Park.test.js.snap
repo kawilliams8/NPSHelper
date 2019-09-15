@@ -26,12 +26,12 @@ exports[`Park should match the snapshot 1`] = `
     <button
       onClick={[Function]}
     >
-      Add to Itinerary
+      Add to Favorites
     </button>
     <button
       onClick={[Function]}
     >
-      Remove from Itinerary
+      Remove from Favorites
     </button>
     <h3>
       Designation: 

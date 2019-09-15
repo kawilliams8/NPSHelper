@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoMatch should match snapshot 1`] = `
+<div
+  className="NoMatch"
+>
+  <h2>
+    Sorry, this page doesn't exist.
+  </h2>
+  <NavLink
+    className="NavText"
+    to="/"
+  >
+    HOME
+  </NavLink>
+</div>
+`;

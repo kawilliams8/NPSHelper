@@ -7,5 +7,9 @@ exports[`Home should match the snapshot 1`] = `
   <h2>
     Home Component Here
   </h2>
+  <img
+    alt="National Parks Service arrowhead logo"
+    src="US-NationalParkService-Logo.svg"
+  />
 </div>
 `;

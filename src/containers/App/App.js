@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
 import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
@@ -57,33 +57,34 @@ export class App extends Component {
           <NavLink to="/favorites" className="NavText">MY FAVORITES</NavLink>
         </header>
         {this.state.isLoading && <img src={Loading} alt="mountains animation"/>}
+        <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/parks' render={() => <ParksContainer type={"parks"} />} />
         <Route exact path='/monuments' render={() => <ParksContainer type={"monts"} />} />
         <Route exact path='/others' render={() => <ParksContainer type={"others"} />} />
         <Route exact path='/favorites' render={() => <ParksContainer type={"favorites"} />} />
-        <Route component={NoMatch} />
-
         <Route path='/parks/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
           const park = this.props.parks.find(park => park.parkCode === parkCode);
           return <Park park={park}/>
         }} />
-        <Route path='/monuments/:parkCode' render={({ match }) => {
+        <Route exact path='/monuments/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
           const park = this.props.monts.find(park => park.parkCode === parkCode);
           return <Park park={park} />
         }} />
-        <Route path='/others/:parkCode' render={({ match }) => {
+        <Route exact path='/others/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
           const park = this.props.others.find(park => park.parkCode === parkCode);
           return <Park park={park} />
         }} />
-        <Route path='/favorites/:parkCode' render={({ match }) => {
+        <Route exact path='/favorites/:parkCode' render={({ match }) => {
           const { parkCode } = match.params;
           const park = this.props.favorites.find(park => park.parkCode === parkCode);
           return <Park park={park} />
         }} />
+        <Route component={NoMatch} />
+        </Switch>
       </main>
     )
   }
