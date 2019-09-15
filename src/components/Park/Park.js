@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../actions';
+import Trails from '../Trails/Trails';
 import notFound from '../../assets/images/image-not-found.jpg';
 import { key } from '../../containers/App/key';
 import './Park.css';
 
 export const Park = (props) => { 
   const { park } = props;
-  let mapUrl = "";
+  let lat, long, mapUrl = "";
   if (park.latLong) {
-    const lat = park.latLong.split(" ")[0].substring(4);
-    const long = park.latLong.split(" ")[1].substring(5);
+    lat = park.latLong.split(" ")[0].substring(4);
+    long = park.latLong.split(" ")[1].substring(5);
     mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v9/static/${long},${lat}5,0,0/500x400?access_token=${key.mb_api_key}`
   }
   let img = notFound; 
@@ -33,17 +34,19 @@ export const Park = (props) => {
         <img className="Park-card-image" src={img} alt={park.fullName} />
         {park.latLong && <img className="Park-card-image" src={mapUrl} alt='map' />}
       </div>
-      <article className="Park-card-info">
-        <h3 className="Park-info-subheading">Description:</h3>
-        <h3>{park.description}</h3>
-        <h3 className="Park-info-subheading">Directions:</h3>
-        <h3>{park.directionsInfo}</h3>
-        <h3 className="Park-info-subheading">Weather:</h3>
-        <a className="Park-weather-link" href={park.weatherInfo} target="_blank" rel="noopener noreferrer">View Current Weather Report</a>
-        <h3 className="Park-info-subheading">Further Information:</h3>
-        <a className="Park-site-link" href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
-      </article>
-      
+      <div className="Park-info-cards">
+        <article className="Park-card-info">
+          <h3 className="Park-info-subheading">Description:</h3>
+          <h3>{park.description}</h3>
+          <h3 className="Park-info-subheading">Directions:</h3>
+          <h3>{park.directionsInfo}</h3>
+          <h3 className="Park-info-subheading">Weather:</h3>
+          <a className="Park-weather-link" href={park.weatherInfo} target="_blank" rel="noopener noreferrer">View Current Weather Report</a>
+          <h3 className="Park-info-subheading">Further Information:</h3>
+          <a className="Park-site-link" href={park.url} target="_blank" rel="noopener noreferrer">Official Site</a>
+        </article>
+        <Trails data={park}/>
+      </div>
       <Link to="/parks" className="Park-final-link">RETURN</Link>
     </section>
   )

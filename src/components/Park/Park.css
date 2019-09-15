@@ -65,8 +65,15 @@
   font-size: 18px;
 }
 
+.Park-info-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .Park-card-info {
   background-color: #F5F5F5;
+  border: .5px solid #989898;
+  border-radius: 3px;
   font-size: 12px;
   margin: 10px 10px 10px 30px;
   padding: 10px;
