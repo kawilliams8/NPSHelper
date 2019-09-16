@@ -1,8 +1,19 @@
 .Trail {
-  color: #989898;
+  color: black;
+  display: flex;
   overflow: scroll;
 }
 
 .Trail-image {
   border: 1px solid #989898;
+  height: 125px;
+  justify-self: flex-start;
+  margin: 10px;
+  object-fit: cover;
+  width: 100px;
+}
+
+.Trail-info-wrapper {
+  margin: 0px;
+  padding: 0px;
 }

@@ -5,12 +5,12 @@ const Trail = ({ trail }) => {
   console.log(trail)
   return (
     <article className="Trail">
-      <img src={trail.imgSqSmall} alt={trail.name} className="Trail-image"/>
-      <h3>{trail.name}</h3>
-      <h4>{trail.length} miles</h4>
+      <img src={trail.imgSmall} alt={trail.name} className="Trail-image"/>
+      <div className="Trail-info-wrapper">
+      <h3>{trail.name}, Distance: {trail.length} miles</h3>
       <h4>{trail.summary}</h4>
-      <h4>{trail.ascent}</h4>
-      <h4>{trail.descent}</h4>
+      <h4>Ascent: {trail.ascent} feet, Descent: {trail.descent} feet</h4>
+      </div>
     </article>
   )
 }
