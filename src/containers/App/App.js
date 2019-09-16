@@ -58,6 +58,7 @@ export class App extends Component {
         </header>
         {this.state.isLoading && <h2 className="App-welcome">Welcome to NPS Helper</h2>}
         {this.state.isLoading && <img src={Loading} alt="mountains animation" className="App-loading"/>}
+        {this.state.error && <h2 className="App-welcome">{this.state.error}</h2>}
         <Switch>
           {!this.state.isLoading && <Route exact path='/' component={Home} />}
           <Route exact path='/parks' render={() => <ParksContainer type={"parks"} />} />
