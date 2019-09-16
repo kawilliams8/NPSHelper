@@ -2,19 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
-import { App, mapStateToProps } from './App';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
 import Home from '../Home/Home';
 import { ParksContainer } from '../ParksContainer/ParksContainer';
 import NoMatch from '../../components/NoMatch/NoMatch';
-
+import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
 
 describe('App', () => {
 
-  let mockStoreParks, mockStoreMonts, mockStoreOthers, mockStore;
+  let mockPark, mockStoreParks, mockStoreMonts, mockStoreOthers, mockStore;
   beforeEach(() => {
     mockStoreParks = jest.fn();
     mockStoreMonts = jest.fn();
     mockStoreOthers = jest.fn();
+    mockPark = {
+      "states": "DC",
+      "directionsInfo": "The memorial is located at the corner of...",
+      "directionsUrl": "http://www.nps.gov/afam/planyourvisit/directions.htm",
+      "url": "https://www.nps.gov/afam/index.htm",
+      "weatherInfo": "Washington DC gets to see all four seasons...",
+      "name": "African American Civil War Memorial",
+      "latLong": "lat:38.916554, long:-77.025977",
+      "description": "Over 200,000 African-American soldiers...",
+      "designation": "",
+      "parkCode": "afam",
+      "id": "1A47416F-DAA3-4137-9F30-14AF86B4E547",
+      "fullName": "African American Civil War Memorial",
+      "type": "parks"
+    }
     mockStore = {
       type: "parks",
       parks: [{
@@ -227,6 +242,46 @@ describe('App', () => {
     };
     const mappedProps = mapStateToProps(mockState);
     expect(mappedProps).toEqual(expected);
+  });
+
+  it('should call a storeParks dispatch with the proper action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = storeParks([mockPark, mockPark]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.storeParks([mockPark, mockPark]);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should call a storeMonts dispatch with the proper action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = storeMonts([mockPark, mockPark]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.storeMonts([mockPark, mockPark]);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should call a storeOthers dispatch with the proper action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = storeOthers([mockPark, mockPark]);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.storeOthers([mockPark, mockPark]);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should call a addFavorite dispatch with the proper action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = addFavorite(mockPark);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.addFavorite(mockPark);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should call a removeFavorite dispatch with the proper action', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = removeFavorite(mockPark);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.removeFavorite(mockPark);
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 
 });
