@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Trail/Trail.css';
 
-const Trail = ({ trail }) => {
+const Trail = ({ trail }) => {  
   return (
     <article className="Trail">
       <img src={trail.imgSmall} alt={trail.name} className="Trail-image"/>
@@ -14,4 +14,4 @@ const Trail = ({ trail }) => {
   )
 }
 
-export default Trail
+export default Trail;

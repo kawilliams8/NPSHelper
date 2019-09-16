@@ -2,68 +2,144 @@
 
 exports[`Park should match the snapshot 1`] = `
 <section
-  className="Park-card"
+  className="Park"
 >
-  <img
-    alt="African American Civil War Memorial"
-    className="Park-card-image"
-    src="https://www.nps.gov/common/uploads/structured_data/3C816B50-1DD8-B71B-0BF380049FB6B6A2.jpg"
-  />
-  <img
-    alt="map"
-    className="Park-card-map"
-    src="https://api.mapbox.com/styles/v1/mapbox/light-v9/static/-77.025977,38.916554,5,0,0/500x400?access_token=pk.eyJ1Ijoia2F3aWxsaWFtczgiLCJhIjoiY2swaWNvM2liMGJ4dDNjbGV2aGhvNHVwdiJ9.omOH_S9FQH-fjgcS0iDA5A"
-  />
-  <article
-    className="Park-card-info"
+  <h2
+    className="Park-heading"
   >
-    <h2>
-      African American Civil War Memorial
-    </h2>
-    <h3>
-      African American Civil War Memorial
-    </h3>
+    African American Civil War Memorial
+  </h2>
+  <h3
+    className="Park-subheading"
+  >
+    Full Name: 
+    African American Civil War Memorial
+  </h3>
+  <h3
+    className="Park-subheading"
+  >
+    Designation: 
+  </h3>
+  <h3
+    className="Park-subheading"
+  >
+    Home State: 
+    DC
+  </h3>
+  <div
+    className="Park-button-wrapper"
+  >
     <button
+      className="Park-fave-button"
       onClick={[Function]}
     >
       Add to Favorites
     </button>
     <button
+      className="Park-fave-button"
       onClick={[Function]}
     >
       Remove from Favorites
     </button>
-    <h3>
-      Designation: 
-    </h3>
-    <h3>
-      Home State: 
-      DC
-    </h3>
-    <h3>
-      Over 200,000 African-American soldiers...
-    </h3>
-    <h3>
-      Directions: 
-      The memorial is located at the corner of...
-    </h3>
-    <h3>
-      Weather: 
-      Washington DC gets to see all four seasons...
-    </h3>
-    <a
-      href="https://www.nps.gov/afam/index.htm"
-      rel="noopener noreferrer"
-      target="_blank"
+  </div>
+  <div
+    className="Park-images-wrapper"
+  >
+    <img
+      alt="African American Civil War Memorial"
+      className="Park-card-image"
+      src="https://www.nps.gov/common/uploads/structured_data/3C816B50-1DD8-B71B-0BF380049FB6B6A2.jpg"
+    />
+    <img
+      alt="map"
+      className="Park-card-image"
+      src="https://api.mapbox.com/styles/v1/mapbox/light-v9/static/-77.025977,38.916554,5,0,0/500x400?access_token=pk.eyJ1Ijoia2F3aWxsaWFtczgiLCJhIjoiY2swaWNvM2liMGJ4dDNjbGV2aGhvNHVwdiJ9.omOH_S9FQH-fjgcS0iDA5A"
+    />
+  </div>
+  <div
+    className="Park-info-cards"
+  >
+    <article
+      className="Park-card-info"
     >
-      Official Site
-    </a>
-    <Link
-      className="button"
-      to="/parks"
-    >
-      Go Back
-    </Link>
-  </article>
+      <h3
+        className="Park-info-subheading"
+      >
+        Description:
+      </h3>
+      <h3>
+        Over 200,000 African-American soldiers...
+      </h3>
+      <h3
+        className="Park-info-subheading"
+      >
+        Directions:
+      </h3>
+      <h3>
+        The memorial is located at the corner of...
+      </h3>
+      <h3
+        className="Park-info-subheading"
+      >
+        Weather:
+      </h3>
+      <a
+        className="Park-weather-link"
+        href="Washington DC gets to see all four seasons..."
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        View Current Weather Report
+      </a>
+      <h3
+        className="Park-info-subheading"
+      >
+        Further Information:
+      </h3>
+      <a
+        className="Park-site-link"
+        href="https://www.nps.gov/afam/index.htm"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Official Site
+      </a>
+    </article>
+    <TrailsContainer
+      data={
+        Object {
+          "description": "Over 200,000 African-American soldiers...",
+          "designation": "",
+          "directionsInfo": "The memorial is located at the corner of...",
+          "directionsUrl": "http://www.nps.gov/afam/planyourvisit/directions.htm",
+          "fullName": "African American Civil War Memorial",
+          "id": "1A47416F-DAA3-4137-9F30-14AF86B4E547",
+          "images": Array [
+            Object {
+              "altText": "Site Statue",
+              "caption": "A poignant reminder of our nations past",
+              "credit": "NPS Photo",
+              "id": "3406",
+              "title": "African American Civil War Statue",
+              "url": "https://www.nps.gov/common/uploads/structured_data/3C816B50-1DD8-B71B-0BF380049FB6B6A2.jpg",
+            },
+          ],
+          "latLong": "lat:38.916554, long:-77.025977",
+          "name": "African American Civil War Memorial",
+          "parkCode": "afam",
+          "states": "DC",
+          "type": "parks",
+          "url": "https://www.nps.gov/afam/index.htm",
+          "weatherInfo": "Washington DC gets to see all four seasons...",
+        }
+      }
+    />
+  </div>
+  <Link
+    className="Park-final-link"
+    to="/parks"
+  >
+    RETURN
+  </Link>
 </section>
 `;

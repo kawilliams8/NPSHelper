@@ -48,4 +48,4 @@ export default class TrailsContainer extends Component {
       </section>
     )
   }
-}
+};

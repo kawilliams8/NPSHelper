@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrailsContainer should match the snapshot 1`] = `
+<section
+  className="TrailsContainer"
+>
+  <h3
+    className="Trails-info-subheading"
+  >
+    Hiking/Running Trails near 
+    African American Civil War Memorial
+    :
+  </h3>
+  <h4>
+    No trails found near this National Park... Volunteer and build one!
+  </h4>
+</section>
+`;

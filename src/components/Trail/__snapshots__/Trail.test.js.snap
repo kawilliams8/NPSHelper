@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trail should match the snapshot 1`] = `
+<article
+  className="Trail"
+>
+  <img
+    alt="Mock trail name"
+    className="Trail-image"
+    src="image url"
+  />
+  <div
+    className="Trail-info-wrapper"
+  >
+    <h3>
+      Mock trail name
+      , Distance: 
+      3
+       miles
+    </h3>
+    <h4>
+      Summary
+    </h4>
+    <h4>
+      Ascent: 
+      200
+       feet, Descent: 
+      100
+       feet
+    </h4>
+  </div>
+</article>
+`;
