@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '../Trails/Trails.css';
+import Trail from '../Trail/Trail';
+import './TrailsContainer.css';
 
-export default class Trails extends Component {
+export default class TrailsContainer extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -36,10 +37,15 @@ export default class Trails extends Component {
   
   render() {
     console.log('trails', this.state.trails)
+    const trailCards = this.state.trails.map(trail => {
+    return <Trail trail={trail}/>
+    });
+
     return (
-      <section className="Trails">
+      <section className="TrailsContainer">
         <h3 className="Trails-info-subheading">Hiking/Running Trails near {this.props.data.name}:</h3>
-        {this.state.trails.length < 1 && <h4>Not found.</h4>}
+        {this.state.trails.length < 1 && <h4>No trails found... Volunteer to build one!</h4>}
+        {trailCards}
       </section>
     )
   }

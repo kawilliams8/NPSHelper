@@ -1,0 +1,8 @@
+.Trail {
+  color: #989898;
+  overflow: scroll;
+}
+
+.Trail-image {
+  border: 1px solid #989898;
+}
