@@ -36,15 +36,14 @@ export default class TrailsContainer extends Component {
   }
   
   render() {
-    console.log('trails', this.state.trails)
     const trailCards = this.state.trails.map(trail => {
-    return <Trail trail={trail}/>
+      return <Trail trail={trail}/>
     });
 
     return (
       <section className="TrailsContainer">
         <h3 className="Trails-info-subheading">Hiking/Running Trails near {this.props.data.name}:</h3>
-        {this.state.trails.length < 1 && <h4>No trails found... Volunteer to build one!</h4>}
+        {this.state.trails.length < 1 && <h4>No trails found near this National Park... Volunteer and build one!</h4>}
         {trailCards}
       </section>
     )

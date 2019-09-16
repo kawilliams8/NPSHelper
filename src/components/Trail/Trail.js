@@ -2,7 +2,6 @@ import React from 'react';
 import '../Trail/Trail.css';
 
 const Trail = ({ trail }) => {
-  console.log(trail)
   return (
     <article className="Trail">
       <img src={trail.imgSmall} alt={trail.name} className="Trail-image"/>

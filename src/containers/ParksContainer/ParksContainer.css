@@ -5,14 +5,19 @@
   min-height: 87vh;
 }
 
-.parks,
-.monts,
-.others {
-  /* background-color: tan; */
-}
-
 .favorites {
   background-image: url("../../assets/images/topo-gray.png");
+}
+
+.Favorites-star {
+  height: 30px;
+  padding-right: 3px;
+  transition: transform .75s ease-in-out;
+  vertical-align: bottom;
+}
+
+.Favorites-star:hover {
+  transform: rotate(360deg);
 }
 
 .Park-link {

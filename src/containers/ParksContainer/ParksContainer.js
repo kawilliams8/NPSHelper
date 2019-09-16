@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Star from '../../assets/images/star.png';
 import './ParksContainer.css';
 
 export const ParksContainer = (props) => {
@@ -10,7 +11,10 @@ export const ParksContainer = (props) => {
     return (
       <Link to={`/${type}/${parkCode}`} style={{ textDecoration: 'none' }}>
         <div className="Park-link" key={id} type={type}>
-          <h3 className="Park-link-heading">{name}</h3>
+          <h3 className="Park-link-heading">
+            {window.location.pathname === '/favorites' && <img className="Favorites-star" src={Star} alt="star"/>}
+            {name}
+            </h3>
           <h4 className="Park-link-body">{designation}</h4>
           <h4 className="Park-link-body">{states}</h4>
           <p className="Park-link-description">{description}</p>
