@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../actions';
-import Trails from '../TrailsContainer/TrailsContainer';
+import Trails from '../../components/TrailsContainer/TrailsContainer';
 import notFound from '../../assets/images/image-not-found.jpg';
-import { key } from '../../containers/App/key';
+import { key } from '../App/key';
 import './Park.css';
 
 export const Park = (props) => { 

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Loading from '../../assets/images/loading.gif';
 import Home from '../Home/Home';
 import ParksContainer from '../ParksContainer/ParksContainer';
-import Park from '../../components/Park/Park';
+import Park from '../Park/Park';
 import './App.css';
 import NoMatch from '../../components/NoMatch/NoMatch';
 
