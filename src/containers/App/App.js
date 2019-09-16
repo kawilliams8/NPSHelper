@@ -16,7 +16,7 @@ export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      parks: TempParksData,
+      parks: [],
       error: "",
       isLoading: true
     }
@@ -24,15 +24,15 @@ export class App extends Component {
 
   componentDidMount() {
     // using fetch, this.state.parks = []
-    // fetchParks()
-    // .then(data => this.filterAndStoreParks(data.data))
-    // .then(() => console.log('hi', this.state.parks))
+    fetchParks()
+    .then(data => this.filterAndStoreParks(data.data))
+    .then(() => console.log('hi', this.state.parks))
     // .then(() => this.setState({isLoading: false}))
-    // .catch(error => this.setState({error: error.message}))
+    .catch(error => this.setState({error: error.message}))
 
     // using mockData, this.state.parks = TempParksData
-    this.filterAndStoreParks(this.state.parks);
-    this.setState({isLoading: false})
+    // this.filterAndStoreParks(this.state.parks);
+    // this.setState({isLoading: false})
   }
 
   filterAndStoreParks = (data) => {
