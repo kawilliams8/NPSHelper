@@ -15,10 +15,11 @@
 }
 
 .App-welcome {
-  color: #eff5e7;
+  color: #585858;
   font-family: 'Roboto Slab', serif;
   font-size: 50px;
   margin: 10px;
+  text-align: center;
 }
 
 .App-loading {
@@ -26,6 +27,7 @@
   height: 482px;
   object-fit: none;
   padding: 10px;
+  width: 100%;
 }
 
 .App-header {
@@ -53,15 +55,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .App-welcome {
-    color: #585858;
-    text-align: center;
-  }
 
   .App-loading {
     display: block;
     margin: 10px auto;
-    width: 95%;
   }
 
   .App-nav-text {
