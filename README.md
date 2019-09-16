@@ -49,20 +49,16 @@ Then navigate to:
 
 ## Wireframes
 
-![L]()
+![Wireframe](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/images/Wireframe.png)
 
 
 ## Built With
 - React
 - React Router
-- PropTypes
 - Jest
 - Enzyme
 - Adobe XD
-- Illustrator
 - HTML
 - CSS
-- [Trello](https://trello.com/b/Z5EEBUMz/swapi-wapi)
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
