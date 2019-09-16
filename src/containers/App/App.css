@@ -58,6 +58,24 @@
     justify-content: space-evenly;
   }
 
+  .Home {
+    height: 100%;
+  }
+
+  .Home-nps-info {
+    display: block;
+  }
+
+  .Home-arrowhead {
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  .Home-info-wrapper {
+    display: inline-block;
+  }
+
   .ParksContainer {
     justify-content: space-around;
   }
