@@ -62,9 +62,31 @@
     justify-content: space-around;
   }
 
+  .Park-button-wrapper {
+    flex-direction: column;
+    margin: auto;
+    width: 38%;
+  }
+
+  .Park-fave-button {
+    background-color: #989898;
+    color: black;
+    width: 100%;
+  }
+
   .Park-card-image {
-    height: 200px;
-    width: 200px;
+    height: 325px;
+    width: 325px;
+  }
+
+  .Park-info-cards {
+    display: block;
+  }
+
+  .Park-card-info,
+  .TrailsContainer {
+    margin: 10px auto;
+    width: 90%;
   }
 }
 
@@ -79,4 +101,12 @@
     padding: 3px;
   }
   
+  .Park-images-wrapper {
+    display: block;
+    width: 83%;
+  }
+
+  .Park-card-image {
+    margin: 10px;
+  }
 }
