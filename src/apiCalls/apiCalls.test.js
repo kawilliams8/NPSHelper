@@ -1,4 +1,4 @@
-import { fetchParks } from "./apiCalls";
+import { fetchParks, fetchTrails } from "./apiCalls";
 
 describe('fetchParks', () => {
 
@@ -75,3 +75,79 @@ describe('fetchParks', () => {
       });
     });
   });
+
+describe('fetchTrails', () => {
+
+  let mockResponse, mockURL;
+  beforeEach(() => {
+    mockResponse = [
+      {
+        "ascent": 1434,
+        "conditionDate": "2019-07-28 07:44:56",
+        "conditionDetails": "Dry",
+        "conditionStatus": "All Clear",
+        "descent": -1434,
+        "difficulty": "blueBlack",
+        "high": 8300,
+        "id": 7015350,
+        "imgMedium": "https://cdn-files.apstatic.com/hike/7032874_medium_1554996734.jpg",
+        "imgSmall": "https://cdn-files.apstatic.com/hike/7032874_small_1554996734.jpg",
+        "imgSmallMed": "https://cdn-files.apstatic.com/hike/7032874_smallMed_1554996734.jpg",
+        "imgSqSmall": "https://cdn-files.apstatic.com/hike/7032874_sqsmall_1554996734.jpg",
+        "latitude": 37.6044,
+        "length": 5.2,
+        "location": "Panguitch, Utah",
+        "longitude": -112.1569,
+        "low": 7425,
+        "name": "Peek-A-Boo Loop",
+        "starVotes": 84,
+        "stars": 4.9,
+        "summary": "This all-time Bryce Canyon favorite boasts magnificent hoodoo spires and numerous rock windows.",
+        "type": "Featured Run",
+        "url": "https://www.trailrunproject.com/trail/7015350/peek-a-boo-loop"
+      }
+    ];
+    mockURL = "https://www.trailrunproject.com/data/get-trails?lat=37.58399&lon=-112.18266&maxDistance=10&key=200590238-ef474523460511c3d882949ee2312c21"
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse)
+      })
+    });
+  });
+
+  it("should call fetch with the correct url HAPPY", () => {
+    fetchTrails(mockURL);
+    expect(window.fetch).toHaveBeenCalledWith(
+      `https://www.trailrunproject.com/data/get-trails?lat=37.58399&lon=-112.18266&maxDistance=10&key=200590238-ef474523460511c3d882949ee2312c21`
+    );
+  });
+
+  it("should return an array of park objects HAPPY", () => {
+    expect(fetchTrails(mockURL)).resolves.toEqual(mockResponse);
+  });
+
+  it("should return an error if response is not okay SAD", () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    });
+    const result = fetchTrails(mockURL);
+    expect(result).rejects.toEqual(
+      Error("There was an error loading the trails")
+    );
+  });
+
+  it("should return an error if the promise rejects SAD", () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject({
+        message: "The server is down."
+      })
+    });
+    const result = fetchParks(mockURL);
+    expect(result).rejects.toEqual({
+      message: "The server is down."
+    });
+  });
+});

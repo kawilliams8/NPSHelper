@@ -8,7 +8,6 @@ import { key } from '../../containers/App/key';
 import './Park.css';
 
 export const Park = (props) => { 
-  console.log('in Park', props.park)
   const { park } = props;
   let lat, long, mapUrl = "";
   if (park.latLong) {
