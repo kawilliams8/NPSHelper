@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Route, NavLink, Switch } from 'react-router-dom';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';
 import { fetchParks } from '../../apiCalls/apiCalls';
@@ -101,3 +102,17 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.propTypes = {
+  props : PropTypes.shape({
+    addFavorite: PropTypes.func,
+    removeFavorite: PropTypes.func,
+    favorites: PropTypes.array,
+    parks: PropTypes.array,
+    others: PropTypes.array,
+    monts: PropTypes.array,
+    storeMonts: PropTypes.func,
+    storeOthers: PropTypes.func,
+    storeParks: PropTypes.func
+  })
+}

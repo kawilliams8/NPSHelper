@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Star from '../../assets/images/star.png';
@@ -40,3 +41,14 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(ParksContainer);
+
+ParksContainer.propTypes = {
+  props : PropTypes.shape({
+    dispatch : PropTypes.func,
+    favorites : PropTypes.array,
+    parks : PropTypes.array,
+    others: PropTypes.array,
+    monts : PropTypes.array,
+    type : PropTypes.string
+  })
+}

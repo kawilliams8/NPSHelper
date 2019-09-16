@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Trail from '../Trail/Trail';
 import './TrailsContainer.css';
 import { fetchTrails } from '../../apiCalls/apiCalls';
@@ -49,3 +50,21 @@ export default class TrailsContainer extends Component {
     )
   }
 };
+
+TrailsContainer.propTypes = {
+  props: PropTypes.shape({
+    description: PropTypes.string,
+    designation: PropTypes.string,
+    directionsInfo: PropTypes.string,
+    directionsUrl: PropTypes.string,
+    fullName: PropTypes.string,
+    id: PropTypes.string,
+    latLong: PropTypes.string,
+    name: PropTypes.string,
+    parkCode: PropTypes.string,
+    states: PropTypes.string,
+    type: PropTypes.string,
+    url: PropTypes.string,
+    weatherInfo: PropTypes.string,
+  })
+}

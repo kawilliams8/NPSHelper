@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../actions';
@@ -9,6 +10,7 @@ import './Park.css';
 
 export const Park = (props) => { 
   const { park } = props;
+  console.log(park)
   let lat, long, mapUrl = "";
   if (park.latLong) {
     lat = park.latLong.split(" ")[0].substring(4);
@@ -65,3 +67,15 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Park);
+
+Park.propTypes = {
+  props : PropTypes.shape({
+    addfavorite : PropTypes.func,
+    removeFavorite : PropTypes.func,
+    parks : PropTypes.array,
+    monts: PropTypes.array,
+    others : PropTypes.array,
+    favorites : PropTypes.array,
+    park: PropTypes.object
+  })
+}
