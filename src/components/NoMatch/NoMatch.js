@@ -7,7 +7,6 @@ const NoMatch = () => {
     <div className="NoMatch"> 
       <h2>Sorry, this page doesn't exist.</h2>
       <h3>Return to the{<NavLink to="/" className="NavText">Welcome Center</NavLink>}</h3>
-      {/* <NavLink to="/" className="NavText">Welcome Center</NavLink> */}
       <img src={Arrowhead} alt="National Parks Service arrowhead logo" />
     </div>
   )

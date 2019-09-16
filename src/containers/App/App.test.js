@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
-import Home from '../Home/Home';
+import Home from '../../components/Home/Home';
 import { ParksContainer } from '../ParksContainer/ParksContainer';
 import NoMatch from '../../components/NoMatch/NoMatch';
 import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from '../../actions';

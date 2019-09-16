@@ -4,13 +4,11 @@ import { storeParks, storeMonts, storeOthers, addFavorite, removeFavorite } from
 import { fetchParks } from '../../apiCalls/apiCalls';
 import { connect } from 'react-redux';
 import Loading from '../../assets/images/loading.gif';
-import Home from '../Home/Home';
+import Home from '../../components/Home/Home';
 import ParksContainer from '../ParksContainer/ParksContainer';
 import Park from '../Park/Park';
 import './App.css';
 import NoMatch from '../../components/NoMatch/NoMatch';
-
-import TempParksData from '../App/TempData';
 
 export class App extends Component {
   constructor(props) {
@@ -23,15 +21,10 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    // using fetch, this.state.parks = []
     fetchParks()
     .then(data => this.filterAndStoreParks(data))
     .then(() => this.setState({isLoading: false}))
     .catch(error => this.setState({error: error.message}))
-
-    // using mockData, this.state.parks = TempParksData
-    // this.filterAndStoreParks(this.state.parks);
-    // this.setState({isLoading: false})
   }
 
   filterAndStoreParks = (data) => {
