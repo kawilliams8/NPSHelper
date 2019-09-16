@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Trail from '../Trail/Trail';
 import './TrailsContainer.css';
+import { fetchTrails } from '../../apiCalls/apiCalls';
 
 export default class TrailsContainer extends Component {
   constructor(props){
@@ -28,8 +29,10 @@ export default class TrailsContainer extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.state.trails.length < 1) {
-      fetch(this.state.url)
-        .then(res => res.json())
+      fetchTrails(this.state.url)
+
+      // fetch(this.state.url)
+      //   .then(res => res.json())
         .then(data => this.setState({trails: data.trails}))
         .catch(error => this.setState({error: error.message}))
     }

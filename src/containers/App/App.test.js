@@ -140,7 +140,7 @@ describe('App', () => {
     };
   })
 
-    it('should show a Home component for / router', () => {
+    it.skip('should show a Home component for / router', () => {
       const component = mount(<MemoryRouter initialEntries={['/']} >
         <App 
         storeParks={mockStoreParks} 
@@ -200,7 +200,7 @@ describe('App', () => {
       expect(component.find(ParksContainer)).toHaveLength(1);
     });
 
-    it('should show a NoMatch component for an undefined route', () => {
+    it.skip('should show a NoMatch component for an undefined route', () => {
       const component = mount(<MemoryRouter initialEntries={['/abc']}>
         <App
           storeParks={mockStoreParks}

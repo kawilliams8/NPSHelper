@@ -7,5 +7,14 @@ export const fetchParks = async () => {
     throw new Error('There was an error loading the parks')
   }
   const parks = await response.json();
-  return parks.data
+  return parks.data;
+}
+
+export const fetchTrails = async (url) => { 
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('There was an error loading the trails')
+  }
+  const trails = await response.json();
+  return trails;
 }

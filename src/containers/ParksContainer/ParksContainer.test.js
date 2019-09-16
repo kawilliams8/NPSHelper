@@ -189,4 +189,36 @@ describe('ParksContainer', () => {
     expect(mappedProps).toEqual(expected);
   });
 
+  it('should update state favorites with a park when addFavorite is called', () => {
+    mockAddFavorite = jest.fn();
+    mockRemoveFavorite = jest.fn();
+    wrapper = shallow(<ParksContainer
+      type="favorites"
+      favorites={mockStore.favorites}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+    />);
+    const mockNewFavorite = { name: 'Bryce Canyon', description: 'Mock description to add' };
+    const expected = [mockNewFavorite];
+    expect(wrapper.state('parks.favorites')).toEqual([]);
+    wrapper.instance().addFavorite(mockNewFavorite);
+    expect(wrapper.state('favorite')).toEqual(expected);
+  });
+
+  it('should update state favorites without the park when removeFavorite is called', () => {
+    mockAddFavorite = jest.fn();
+    mockRemoveFavorite = jest.fn();
+    wrapper = shallow(<ParksContainer
+      type="favorites"
+      favorites={mockStore.favorites}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+    />);
+    const mockNotFavorite = { name: 'Bryce Canyon', description: 'Mock description to remove' };
+    const expected = [mockNotFavorite];
+    expect(wrapper.state('parks.favorites')).toEqual([]);
+    wrapper.instance().removeFavorite(mockNotFavorite);
+    expect(wrapper.state('favorite')).toEqual(expected);
+  });
+
 });

@@ -25,9 +25,8 @@ export class App extends Component {
   componentDidMount() {
     // using fetch, this.state.parks = []
     fetchParks()
-    .then(data => this.filterAndStoreParks(data.data))
-    .then(() => console.log('hi', this.state.parks))
-    // .then(() => this.setState({isLoading: false}))
+    .then(data => this.filterAndStoreParks(data))
+    .then(() => this.setState({isLoading: false}))
     .catch(error => this.setState({error: error.message}))
 
     // using mockData, this.state.parks = TempParksData
@@ -60,7 +59,7 @@ export class App extends Component {
         {this.state.isLoading && <h2 className="App-welcome">Welcome to NPS Helper</h2>}
         {this.state.isLoading && <img src={Loading} alt="mountains animation" className="App-loading"/>}
         <Switch>
-          {!this.state.isLoading ? <Route exact path='/' component={Home} /> : null}
+          {!this.state.isLoading && <Route exact path='/' component={Home} />}
           <Route exact path='/parks' render={() => <ParksContainer type={"parks"} />} />
           <Route exact path='/monuments' render={() => <ParksContainer type={"monts"} />} />
           <Route exact path='/others' render={() => <ParksContainer type={"others"} />} />
@@ -85,7 +84,7 @@ export class App extends Component {
             const park = this.props.favorites.find(park => park.parkCode === parkCode);
             return <Park park={park} />
           }} />
-          {!this.state.isLoading ? <Route component={NoMatch} /> : null}
+          {!this.state.isLoading && <Route component={NoMatch} />}
         </Switch>
       </main>
     )

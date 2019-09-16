@@ -33,7 +33,8 @@ describe('Park', () => {
     }
     mockAddFavorite = jest.fn();
     mockRemoveFavorite = jest.fn();
-    wrapper = shallow(<Park park={mockPark}
+    wrapper = shallow(<Park 
+      park={mockPark}
       addFavorite={mockAddFavorite}
       removeFavorite={mockRemoveFavorite}
       />)
@@ -52,4 +53,5 @@ describe('Park', () => {
     wrapper.find('button').at(1).simulate('click');
     expect(mockRemoveFavorite).toHaveBeenCalled();
   });
-})
+
+});

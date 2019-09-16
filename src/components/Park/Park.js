@@ -8,6 +8,7 @@ import { key } from '../../containers/App/key';
 import './Park.css';
 
 export const Park = (props) => { 
+  console.log('in Park', props.park)
   const { park } = props;
   let lat, long, mapUrl = "";
   if (park.latLong) {
@@ -16,7 +17,7 @@ export const Park = (props) => {
     mapUrl = `https://api.mapbox.com/styles/v1/mapbox/light-v9/static/${long},${lat}5,0,0/500x400?access_token=${key.mb_api_key}`
   }
   let img = notFound; 
-  if (park.images[0].url) {
+  if (park.images) {
     img = park.images[0].url
   }
 
