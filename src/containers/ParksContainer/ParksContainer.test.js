@@ -6,7 +6,7 @@ describe('ParksContainer', () => {
 
   let wrapper, mockStore, mockAddFavorite, mockRemoveFavorite;
   beforeEach(() => {
-    mockStore = { type: "parks",
+    mockStore = {
       parks: [{
         "states": "DC",
         "directionsInfo": "The memorial is located at the corner of...",
@@ -132,13 +132,43 @@ describe('ParksContainer', () => {
     mockRemoveFavorite = jest.fn();
     wrapper = shallow(<ParksContainer 
       type="parks"
+      parks={mockStore.parks}
       addFavorite={mockAddFavorite}
       removeFavorite={mockRemoveFavorite}
       />);
-      console.log('wrapper', wrapper.debug({ verbose: true }))
   });
   
-  it('should match the snapshot', () => {
+  it('should match the parks snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the monts snapshot', () => {
+    wrapper = shallow(<ParksContainer
+      type="monts"
+      monts={mockStore.monts}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+    />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the others snapshot', () => {
+    wrapper = shallow(<ParksContainer
+      type="others"
+      others={mockStore.others}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+    />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the favorites snapshot', () => {
+    wrapper = shallow(<ParksContainer
+      type="favorites"
+      favorites={mockStore.favorites}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+    />);
     expect(wrapper).toMatchSnapshot();
   });
 

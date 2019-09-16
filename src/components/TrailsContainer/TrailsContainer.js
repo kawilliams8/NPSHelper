@@ -36,8 +36,8 @@ export default class TrailsContainer extends Component {
   }
   
   render() {
-    const trailCards = this.state.trails.map(trail => {
-      return <Trail trail={trail}/>
+    const trailCards = this.state.trails.map((trail, index) => {
+      return <Trail trail={trail} key={index}/>
     });
 
     return (

@@ -4,7 +4,7 @@ import { Park } from '../Park/Park';
 
 describe('Park', () => {
 
-  let wrapper, mockPark;
+  let wrapper, mockPark, mockAddFavorite, mockRemoveFavorite;
   beforeEach(() => {
     mockPark = {
       "states": "DC",
@@ -31,10 +31,25 @@ describe('Park', () => {
         }
       ]
     }
-    wrapper = shallow(<Park park={mockPark}/>)
+    mockAddFavorite = jest.fn();
+    mockRemoveFavorite = jest.fn();
+    wrapper = shallow(<Park park={mockPark}
+      addFavorite={mockAddFavorite}
+      removeFavorite={mockRemoveFavorite}
+      />)
   });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call the addFavorite method when clicked', () => {
+    wrapper.find('button').at(0).simulate('click');
+    expect(mockAddFavorite).toHaveBeenCalled();
+  });
+
+  it('should call the removeFavorite method when clicked', () => {
+    wrapper.find('button').at(1).simulate('click');
+    expect(mockRemoveFavorite).toHaveBeenCalled();
   });
 })

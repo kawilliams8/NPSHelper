@@ -1,3 +1,389 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ParksContainer should match the snapshot 1`] = `undefined`;
+exports[`ParksContainer should match the favorites snapshot 1`] = `
+<section
+  className="ParksContainer favorites"
+>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/afam"
+  >
+    <div
+      className="Park-link"
+      key="1A47416F-DAA3-4137-9F30-14AF86B4E547"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        African American Civil War Memorial
+      </h3>
+      <h4
+        className="Park-link-body"
+      />
+      <h4
+        className="Park-link-body"
+      >
+        DC
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        Over 200,000 African-American soldiers...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/afam"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/auca"
+  >
+    <div
+      className="Park-link"
+      key="813548D1-F8EA-4C07-8878-17FB3C385378"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        Augusta Canal
+      </h3>
+      <h4
+        className="Park-link-body"
+      >
+        National Heritage Area
+      </h4>
+      <h4
+        className="Park-link-body"
+      >
+        GA
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        The Augusta Canal...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/auca"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+</section>
+`;
+
+exports[`ParksContainer should match the monts snapshot 1`] = `
+<section
+  className="ParksContainer monts"
+>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/afam"
+  >
+    <div
+      className="Park-link"
+      key="1A47416F-DAA3-4137-9F30-14AF86B4E547"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        African American Civil War Memorial
+      </h3>
+      <h4
+        className="Park-link-body"
+      />
+      <h4
+        className="Park-link-body"
+      >
+        DC
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        Over 200,000 African-American soldiers...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/afam"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/auca"
+  >
+    <div
+      className="Park-link"
+      key="813548D1-F8EA-4C07-8878-17FB3C385378"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        Augusta Canal
+      </h3>
+      <h4
+        className="Park-link-body"
+      >
+        National Heritage Area
+      </h4>
+      <h4
+        className="Park-link-body"
+      >
+        GA
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        The Augusta Canal...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/auca"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+</section>
+`;
+
+exports[`ParksContainer should match the others snapshot 1`] = `
+<section
+  className="ParksContainer others"
+>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/afam"
+  >
+    <div
+      className="Park-link"
+      key="1A47416F-DAA3-4137-9F30-14AF86B4E547"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        African American Civil War Memorial
+      </h3>
+      <h4
+        className="Park-link-body"
+      />
+      <h4
+        className="Park-link-body"
+      >
+        DC
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        Over 200,000 African-American soldiers...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/afam"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/auca"
+  >
+    <div
+      className="Park-link"
+      key="813548D1-F8EA-4C07-8878-17FB3C385378"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        Augusta Canal
+      </h3>
+      <h4
+        className="Park-link-body"
+      >
+        National Heritage Area
+      </h4>
+      <h4
+        className="Park-link-body"
+      >
+        GA
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        The Augusta Canal...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/auca"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+</section>
+`;
+
+exports[`ParksContainer should match the parks snapshot 1`] = `
+<section
+  className="ParksContainer parks"
+>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/afam"
+  >
+    <div
+      className="Park-link"
+      key="1A47416F-DAA3-4137-9F30-14AF86B4E547"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        African American Civil War Memorial
+      </h3>
+      <h4
+        className="Park-link-body"
+      />
+      <h4
+        className="Park-link-body"
+      >
+        DC
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        Over 200,000 African-American soldiers...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/afam"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+  <Link
+    style={
+      Object {
+        "textDecoration": "none",
+      }
+    }
+    to="/parks/auca"
+  >
+    <div
+      className="Park-link"
+      key="813548D1-F8EA-4C07-8878-17FB3C385378"
+      type="parks"
+    >
+      <h3
+        className="Park-link-heading"
+      >
+        Augusta Canal
+      </h3>
+      <h4
+        className="Park-link-body"
+      >
+        National Heritage Area
+      </h4>
+      <h4
+        className="Park-link-body"
+      >
+        GA
+      </h4>
+      <p
+        className="Park-link-description"
+      >
+        The Augusta Canal...
+      </p>
+      <p
+        className="Park-link-ellipsis"
+      >
+        ...
+      </p>
+      <Link
+        className="Park-link-more"
+        to="/parks/auca"
+      >
+        Read More...
+      </Link>
+    </div>
+  </Link>
+</section>
+`;

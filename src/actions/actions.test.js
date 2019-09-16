@@ -83,7 +83,7 @@ describe('Actions', () => {
     expect(result).toEqual(expected);
   });
 
-  it.skip('should return an action for REMOVE_FAVORITE', () => {
+  it('should return an action for REMOVE_FAVORITE', () => {
     const expected = {
       type: 'REMOVE_FAVORITE',
       park: mockPark
