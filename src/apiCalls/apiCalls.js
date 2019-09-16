@@ -11,6 +11,7 @@ export const fetchParks = async () => {
 }
 
 export const fetchTrails = async (url) => { 
+  console.log('in fetch', url)
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error('There was an error loading the trails')

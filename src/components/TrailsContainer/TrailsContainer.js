@@ -27,14 +27,11 @@ export default class TrailsContainer extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     if (this.state.trails.length < 1) {
       fetchTrails(this.state.url)
-
-      // fetch(this.state.url)
-      //   .then(res => res.json())
-        .then(data => this.setState({trails: data.trails}))
-        .catch(error => this.setState({error: error.message}))
+      .then(data => this.setState({trails: data.trails}))
+      .catch(error => this.setState({error: error.message}))
     }
   }
   
