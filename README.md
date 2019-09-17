@@ -1,6 +1,6 @@
 # NPS Helper
 
-NPS Helper is the final solo project built during Module 3 of the Front End Engineering program at the Turing School of Software & Design. Over the course of one week, students select an API of personal interest, then design, build and test a React/Redux web app that displays the received data. 
+NPS Helper is the final solo project built during Module 3 of the Front End Engineering program at the Turing School of Software & Design. Over the course of five days, I designed, built and tested a React/Redux web app that displays data received data from three API's of choice.
 
 The National Parks Service API provides information on numerous parks, monuments and other historical sites across the United States. With each location's provided latitude and longitude, I was able to search the Trail Run Project's API and provide hiking/running trails within a ten mile radius of each Park. The mapbox API provides an additional area map based on the latitude and longitude of the Park.
 
