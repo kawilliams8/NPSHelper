@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Arrowhead from '../../assets/images/US-NationalParkService-Logo.svg';
+import '../NoMatch/NoMatch.css';
 
 const NoMatch = () => {
   return (
