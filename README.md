@@ -34,7 +34,9 @@ Then navigate to:
 
 `http://localhost:3000/`
 
-## Results
+# Results
+
+### Desktop layout
 
 ![FullsizeLoading](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/fullLoading.png)
 ![FullsizeNPSInfo](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/fullNPSinfo.png)
@@ -44,8 +46,9 @@ Then navigate to:
 ![FullsizeParkdetailTop](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/fullParktop.png)
 ![FullsizeParkdetailBottom](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/fullParkbottom.png)
 ![FullsizeFavorites](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/fullFavorites.png)
+![Fullsize404/NoMatch](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/404.png)
 
-## Tablet/Responsive Layout
+# Tablet/Responsive Layout
 
 ![TabletLoading](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/mobileLoading.png)
 ![TabletNPSInfo](https://github.com/kawilliams8/NPSHelper/blob/master/src/assets/README_images/mobileNPSinfo.png)
