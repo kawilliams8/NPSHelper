@@ -8,7 +8,7 @@ This project was built with the create-react-app starter kit. All tests are exec
 
 NPS Helper receives a Lighthouse Best Practices audit score of 86.
 
-This project uses the [!National Park Typeface](https://nationalparktypeface.com/).
+This project uses the [National Park Typeface](https://nationalparktypeface.com/).
 
 ## Author
 * Katherine Williams ([kawilliams8](https://github.com/kawilliams8))
